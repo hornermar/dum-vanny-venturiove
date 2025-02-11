@@ -1,30 +1,37 @@
 export const messages1 = [
   {
-    text: "Roberte, postavíš mi dům?",
+    text: "Bobe, postavíš mi dům?",
     sender: "Vanna Venturiová",
   },
   {
     text: "Dobře mami. A jak by měl vypadat?",
     sender: "Robert Venturi",
   },
-  { text: "To nechám na tobě", sender: "Vanna Venturiová" },
-  { text: "Méně je více.", sender: "Mies van der Rohe" },
   {
-    text: "Méně je nuda. Bude to tak a tak ...",
+    text: "Chtěla bych jendoduchý a skromný domov. S většinou místností v přízemí. A už nepoužívám auto, takže nepotřebuju garáž.",
+    sender: "Vanna Venturiová",
+  },
+  {
+    text: "Jdu na to!",
     sender: "Robert Venturi",
   },
-  {
-    text: "Nikdy nemaluj dům na zeleno. To je barva přírody.",
-    sender: "Marcel Breuer",
-  },
+  // { text: "Méně je více.", sender: "Mies van der Rohe" },
   // {
-  //   text: "Jedna věc, kterou nikdy nedělám, je používat zelenou barvu na dům. To je barva přírody. Nikdy to nedělej.",
+  //   text: "Méně je nuda. Bude to tak a tak ...",
+  //   sender: "Robert Venturi",
+  // },
+  // {
+  //   text: "Nikdy nemaluj dům na zeleno. To je barva přírody.",
   //   sender: "Marcel Breuer",
   // },
-  {
-    text: "A natřený bude na zeleno!",
-    sender: "Robert Venturi",
-  },
+  // // {
+  // //   text: "Jedna věc, kterou nikdy nedělám, je používat zelenou barvu na dům. To je barva přírody. Nikdy to nedělej.",
+  // //   sender: "Marcel Breuer",
+  // // },
+  // {
+  //   text: "A natřený bude na zeleno!",
+  //   sender: "Robert Venturi",
+  // },
   {
     text: "...",
     sender: "Robert Venturi",

@@ -9,14 +9,7 @@
   <body>
     <main>
       <div class="container">
-        <!-- <div class="header">
-          <h1 class="header--title">Dům Vanny Venturiové</h1>
-          <p class="header--author">Robert Venturi</p>
-          <p class="header--description">Filadelfie, 1964</p>
-        </div> -->
-
         <div class="chat"></div>
-        <div class="countdown">1 rok</div>
 
         <div class="slider">
           <input
@@ -27,12 +20,13 @@
             max="13"
             step="1"
           />
-          <!-- <span class="range-slider__value"></span> -->
         </div>
 
-        <div class="element">
-          <p class="element--title"></p>
-          <p class="element--description"></p>
+        <div class="message message--right element">
+          <div class="message-text">
+            <p id="element--title"></p>
+            <p id="element--description"></p>
+          </div>
         </div>
       </div>
 
@@ -99,9 +93,10 @@
           id="layer13"
         />
       </div>
+
+      <span class="year">1959</span>
     </main>
     <footer>Dům Vanny Venturiové, 1964, Filadelfie</footer>
-    <!-- <footer>Méně je <span class="boremore">nuda</span></footer> -->
     <script src="index.js" type="module"></script>
   </body>
 </html>

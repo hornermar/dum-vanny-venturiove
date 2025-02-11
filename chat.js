@@ -1,6 +1,19 @@
+let currentMessages = [];
+let currentCallback = null;
+
 const chat = document.querySelector(".chat");
 
-export const addMessage = (message) => {
+const createLoadingMessage = (element) => {
+  element.classList.add("message-text--loading");
+
+  for (let i = 0; i < 3; i++) {
+    const line = document.createElement("div");
+    line.classList.add("line");
+    element.appendChild(line);
+  }
+};
+
+const addMessage = (message) => {
   chat.style.display = "flex";
   const messageEl = document.createElement("div");
   const senderEl = document.createElement("div");
@@ -9,7 +22,12 @@ export const addMessage = (message) => {
   senderEl.textContent = message.sender;
   senderEl.classList.add("message-sender");
 
-  textEl.textContent = message.text;
+  if (message.text === "...") {
+    createLoadingMessage(textEl);
+  } else {
+    textEl.textContent = message.text;
+  }
+
   textEl.classList.add("message-text");
 
   messageEl.classList.add("message", "message--received");
@@ -25,8 +43,43 @@ export const addMessage = (message) => {
   chat.appendChild(messageEl);
 };
 
-export const clearMessages = () => {
-  while (chat.firstChild) {
-    chat.removeChild(chat.firstChild);
+// export const clearMessages = () => {
+//   while (chat.firstChild) {
+//     chat.removeChild(chat.firstChild);
+//   }
+// };
+
+export const clearLastMessage = () => {
+  chat.removeChild(chat.lastChild);
+};
+
+const handleClick = (messages, callback) => {
+  if (messages.length > 0) {
+    const message = messages.shift();
+    if (message && messages.length > 0) {
+      addMessage(message);
+    } else {
+      addMessage(message);
+      document.removeEventListener("click", handleClickWrapper);
+      callback();
+    }
+  } else {
+    document.removeEventListener("click", handleClickWrapper);
+    callback();
   }
+};
+
+const handleClickWrapper = () => {
+  handleClick(currentMessages, currentCallback);
+};
+
+export const startChat = (messages, callback) => {
+  // display first message without waiting for click
+  addMessage(messages[0]);
+  messages.shift();
+
+  currentMessages = messages;
+  currentCallback = callback;
+
+  document.addEventListener("click", handleClickWrapper);
 };

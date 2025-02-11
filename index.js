@@ -1,36 +1,19 @@
 import { initBuilding, updateElement } from "./building.js";
-import { addMessage, clearMessages } from "./chat.js";
+import { clearLastMessage, startChat } from "./chat.js";
 import { layers } from "./data/layers.js";
 import { messages1, messages2 } from "./data/messages.js";
 
-let currentMessages = [];
-let currentCallback = null;
-
 const chat = document.querySelector(".chat");
-const countdown = document.querySelector(".countdown");
 const slider = document.querySelector(".slider");
+const element = document.querySelector(".element");
 const footer = document.querySelector("footer");
 
-const startCountdown = () => {
-  let timer = 2;
-  countdown.style.display = "flex";
+// const progressBar = document.querySelector(".progressbar");
+const year = document.querySelector(".year");
 
-  const countdownInterval = setInterval(() => {
-    countdown.textContent = `${timer} ${timer === 1 ? "rok" : "roky"}`;
-    timer++;
-
-    if (timer > 5) {
-      clearInterval(countdownInterval);
-      countdown.style.display = "none";
-
-      startChat(messages2, () => initBuilding(changeToBuilding));
-      // ;
-    }
-  }, 1000);
-};
-
-const changeToBuilding = () => {
-  const elements = [slider, footer];
+// Utility functions
+const displaySlider = () => {
+  const elements = [slider, element, footer];
 
   elements.forEach((element) => {
     element.style.display = "block";
@@ -38,30 +21,31 @@ const changeToBuilding = () => {
   });
 };
 
-const handleClick = (messages, callback) => {
-  const message = messages.shift();
-  if (message) {
-    addMessage(message);
-  } else {
-    document.removeEventListener("click", handleClickWrapper);
-    clearMessages();
-    chat.style.display = "none";
-    callback();
-  }
+// STEP 2: Update year
+const updateYear = () => {
+  const years = [1960, 1961, 1962, 1963, 1964];
+  let currentYearIndex = 0;
+
+  const interval = setInterval(() => {
+    if (currentYearIndex < years.length) {
+      year.textContent = years[currentYearIndex];
+      currentYearIndex++;
+    } else {
+      clearInterval(interval);
+      clearLastMessage();
+
+      // STEP 3: Finish chat
+      startChat(messages2, changeToBuilding);
+    }
+  }, 1000);
 };
 
-const handleClickWrapper = () => {
-  handleClick(currentMessages, currentCallback);
+// STEP 4: Remove chat and show building
+const changeToBuilding = () => {
+  chat.style.display = "none";
+  year.style.display = "none";
+  initBuilding(displaySlider);
 };
 
-const startChat = (messages, callback) => {
-  addMessage(messages[0]);
-  messages.shift();
-
-  currentMessages = messages;
-  currentCallback = callback;
-
-  document.addEventListener("click", handleClickWrapper);
-};
-
-startChat(messages1, startCountdown);
+// STEP 1: Start chat
+startChat(messages1, updateYear);

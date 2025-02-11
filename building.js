@@ -3,8 +3,7 @@ import { layers } from "./data/layers.js";
 let userInteracted = false;
 const svgImages = document.querySelectorAll(".building-layer");
 const sliderInput = document.querySelector(".slider--input");
-const elementTitle = document.querySelector(".element--title");
-const elementDescription = document.querySelector(".element--description");
+const elementDescription = document.querySelector(".message-text");
 
 const updateSvg = (value) => {
   svgImages.forEach((img) => {
@@ -19,8 +18,10 @@ const updateSvg = (value) => {
 };
 
 export const updateElement = (value) => {
-  elementTitle.textContent = layers[value - 1]?.name;
-  elementDescription.textContent = layers[value - 1]?.description || "";
+  const layer = layers[value - 1];
+  if (layer) {
+    elementDescription.innerHTML = `<b>${layer.name}</b>: ${layer.description}`;
+  }
 
   sliderInput.value = value;
 
@@ -45,13 +46,9 @@ export const initBuilding = (callback) => {
     const imgId = parseInt(img.id.replace("layer", ""), 10);
 
     setTimeout(() => {
-      // if (!userInteracted) {
       updateSvg(imgId);
       completedTimeouts++;
-      // }
-      // else {
-      //   updateElement(layers.length);
-      // }
+
       if (completedTimeouts === totalTimeouts) {
         setTimeout(() => {
           callback();
