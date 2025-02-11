@@ -24,21 +24,37 @@ body {
   z-index: 1000;
 }
 
-h1 {
+.slider,
+footer,
+.countdown {
+  display: none;
+}
+
+/* .header--title {
   text-transform: uppercase;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 10px;
   max-width: 310px;
 }
 
-.element {
+.element--title {
   margin-bottom: 10px;
 }
 
 .element-description {
   font-size: 14px;
+} */
+
+.countdown {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #89c6b4;
+  text-align: right;
 }
 
 .building-layer {
@@ -53,7 +69,7 @@ h1 {
 }
 
 /* Slider */
-.range-slider {
+.slider {
   margin: 20px 0;
   height: 100%;
   width: 100%;
@@ -61,7 +77,7 @@ h1 {
   position: relative;
 }
 
-.range-slider__range {
+.slider--input {
   -webkit-appearance: none;
   width: 100%;
   height: 10px;
@@ -70,7 +86,7 @@ h1 {
   outline: none;
 }
 
-.range-slider__range::-webkit-slider-thumb {
+.slider--input::-webkit-slider-thumb {
   appearance: none;
   width: 20px;
   height: 20px;
@@ -80,33 +96,43 @@ h1 {
   transition: #89c6b4 0.15s ease-in-out;
 }
 
-/* Range Label */
-/* .range-slider__value {
-  font-size: 12px;
-  display: inline-block;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  color: #fff;
-  background: #7f7f7f;
-  text-align: center;
-  border-radius: 5px;
-  padding: 8px 10px;
-  transform: translate(-40%, 0) rotate(-90deg);
-  width: 110px;
+.chat {
+  display: flex;
+  flex-direction: column;
 }
 
-.range-slider__value:after {
-  position: absolute;
-  top: 8px;
-  right: -6px;
-  width: 0;
-  height: 0;
-  border-top: 7px solid transparent;
-  border-left: 7px solid #7f7f7f;
-  border-bottom: 7px solid transparent;
-  content: "";
-} */
+.message {
+  font-size: 12px;
+  margin-bottom: 10px;
+  max-width: 80%;
+}
+
+.message--left {
+  align-self: flex-start;
+}
+
+.message--right {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message-sender {
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+.message--right .message-sender {
+  color: #5e8f80;
+}
+
+.message-text {
+  background-color: white;
+  padding: 10px 15px;
+  margin-top: 5px;
+  color: #7f7f7f;
+  border-radius: 50px;
+  display: inline-block;
+}
 
 footer {
   position: fixed;

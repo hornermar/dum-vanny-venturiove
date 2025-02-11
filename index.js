@@ -1,55 +1,67 @@
-import { layers } from "./layers.js";
+import { initBuilding, updateElement } from "./building.js";
+import { addMessage, clearMessages } from "./chat.js";
+import { layers } from "./data/layers.js";
+import { messages1, messages2 } from "./data/messages.js";
 
-let userInteracted = false;
+let currentMessages = [];
+let currentCallback = null;
 
-const rangeSlider = () => {
-  const svgImages = document.querySelectorAll(".building-layer");
-  const rangeEl = document.querySelector(".range-slider__range");
-  const element = document.querySelector(".element");
-  const elementDescription = document.querySelector(".element-description");
+const chat = document.querySelector(".chat");
+const countdown = document.querySelector(".countdown");
+const slider = document.querySelector(".slider");
+const footer = document.querySelector("footer");
 
-  // const valueEl = document.querySelector(".range-slider__value");
-  const rangeWidth = rangeEl.offsetWidth;
-  const thumbWidth = 20;
-  const max = rangeEl.max;
-  const min = rangeEl.min;
+const startCountdown = () => {
+  let timer = 2;
+  countdown.style.display = "flex";
 
-  const updateElement = (value) => {
-    // valueEl.textContent = layers[value - 1]?.name;
-    element.textContent = layers[value - 1]?.name;
-    elementDescription.textContent = layers[value - 1]?.description || "";
-    const left = ((value - min) / (max - min)) * (rangeWidth - thumbWidth);
+  const countdownInterval = setInterval(() => {
+    countdown.textContent = `${timer} ${timer === 1 ? "rok" : "roky"}`;
+    timer++;
 
-    rangeEl.value = value;
-    // valueEl.style.left = `${left}px`;
+    if (timer > 5) {
+      clearInterval(countdownInterval);
+      countdown.style.display = "none";
 
-    svgImages.forEach((img) => {
-      const imgId = parseInt(img.id.replace("layer", ""), 10);
+      startChat(messages2, () => initBuilding(changeToBuilding));
+      // ;
+    }
+  }, 1000);
+};
 
-      if (imgId <= value) {
-        img.style.bottom = "35px";
-      } else {
-        img.style.bottom = "1200px";
-      }
-    });
-  };
+const changeToBuilding = () => {
+  const elements = [slider, footer];
 
-  rangeEl.addEventListener("input", (e) => {
-    userInteracted = true;
-    const value = parseInt(rangeEl.value, 10);
-
-    updateElement(value);
-  });
-
-  svgImages.forEach((img, index) => {
-    const imgId = parseInt(img.id.replace("layer", ""), 10);
-
-    setTimeout(() => {
-      if (!userInteracted) {
-        updateElement(imgId);
-      }
-    }, index * 500);
+  elements.forEach((element) => {
+    element.style.display = "block";
+    updateElement(layers.length);
   });
 };
 
-rangeSlider();
+const handleClick = (messages, callback) => {
+  const message = messages.shift();
+  if (message) {
+    addMessage(message);
+  } else {
+    document.removeEventListener("click", handleClickWrapper);
+    clearMessages();
+    chat.style.display = "none";
+    callback();
+  }
+};
+
+const handleClickWrapper = () => {
+  handleClick(currentMessages, currentCallback);
+};
+
+const startChat = (messages, callback) => {
+  addMessage(messages[0]);
+  messages.shift();
+
+  currentMessages = messages;
+  currentCallback = callback;
+
+  document.addEventListener("click", handleClickWrapper);
+};
+
+startChat(messages1, startCountdown);

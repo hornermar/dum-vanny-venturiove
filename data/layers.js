@@ -13,7 +13,7 @@ export const layers = [
   },
   {
     id: 3,
-    name: "Falešný komín",
+    name: "Komínový krb",
     description:
       "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
@@ -25,21 +25,20 @@ export const layers = [
   },
   {
     id: 5,
-    name: "Komín",
-    description:
-      "Curabitur sagittis hendrerit ante. Fusce tellus. Et harum quidem rerum facilis est et expedita distinctio. Fusce nibh.",
+    name: "Falešný Komín",
+    description: "Umístěný mimo střed",
   },
   {
     id: 6,
-    name: "Schody",
+    name: "Schodiště",
     description:
-      "Sed convallis magna eu sem. Etiam neque. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.",
+      "Schodiště chápané jako prvek sám o sobě v nešokpvném zybtkovém prostoru je špatné, ale vztíhneme-li jeho umístění k účelové a prostorové hierarchii, je fragmentem přiměřeně se přizpůsobujícím složitému a protikladnému celku a jako takové je dobré. Dole je schodiště místem, kde si lze sednout, stoupat nahoru i odložit předměty, které později poneseme dál.",
   },
   {
     id: 7,
-    name: "Falešné schody",
+    name: "Schodiště nikam",
     description:
-      "Mauris tincidunt sem sed arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      "Malé schodiště nikam v prvním patře se nešikovně přizpůsobuje zbytkovému prostoru jádra: na jedné úrovni nevede nikam a je rozmarné; o úroveň výše se téměř mění v žebřík opřený o stěnu, který slouží k mytí vysokého okna a natírání střešního nástavku.",
   },
   {
     id: 8,
@@ -51,7 +50,7 @@ export const layers = [
     id: 9,
     name: "Fasáda",
     description:
-      "In enim a arcu imperdiet malesuada. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna.",
+      "Jako bilboard. Průčelí, konvenčně kombinující dveře, okna, komín a štít, vytváří téměř symbolický obraz domu.",
   },
   {
     id: 10,
@@ -72,7 +71,7 @@ export const layers = [
   },
   {
     id: 13,
-    name: "Dekorace",
+    name: "Dřevěné prvky",
     description:
       "Nullam at arcu a est sollicitudin euismod. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam.",
   },
