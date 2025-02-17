@@ -1,14 +1,16 @@
 import { initBuilding, updateElement } from "./building.js";
-import { clearLastMessage, startChat } from "./chat.js";
+import { clearLastMessage, addMessage, clearMessages } from "./chat.js";
 import { layers } from "./data/layers.js";
-import { messages1, messages2 } from "./data/messages.js";
+import { messages, lastMessage } from "./data/messages.js";
+
+let currentYear = 1960;
+let currentMessages = [];
 
 const chat = document.querySelector(".chat");
 const slider = document.querySelector(".slider");
 const element = document.querySelector(".element");
 const footer = document.querySelector("footer");
 
-// const progressBar = document.querySelector(".progressbar");
 const year = document.querySelector(".year");
 
 // Utility functions
@@ -23,29 +25,61 @@ const displaySlider = () => {
 
 // STEP 2: Update year
 const updateYear = () => {
-  const years = [1960, 1961, 1962, 1963, 1964];
-  let currentYearIndex = 0;
-
   const interval = setInterval(() => {
-    if (currentYearIndex < years.length) {
-      year.textContent = years[currentYearIndex];
-      currentYearIndex++;
+    if (currentYear <= 1964) {
+      year.textContent = currentYear;
+      currentYear++;
     } else {
       clearInterval(interval);
-      clearLastMessage();
-
-      // STEP 3: Finish chat
-      startChat(messages2, changeToBuilding);
     }
-  }, 1000);
+  }, 3000);
 };
 
-// STEP 4: Remove chat and show building
+// STEP 3: Remove chat and show building
 const changeToBuilding = () => {
-  chat.style.display = "none";
-  year.style.display = "none";
-  initBuilding(displaySlider);
+  const checkInterval = setInterval(() => {
+    if (currentYear === 1965) {
+      clearLastMessage();
+      addMessage(lastMessage);
+      clearInterval(checkInterval);
+      chat.style.display = "none";
+      year.style.display = "none";
+      initBuilding(displaySlider);
+    }
+  }, 2000);
+};
+
+const handleClick = () => {
+  if (currentMessages.length > 0) {
+    const message = currentMessages.shift();
+    if (message) {
+      if (message.text === "...") {
+        // STEP 2: Update year
+        updateYear();
+      } else if (message.text === "Méně je více.") {
+        clearMessages();
+      }
+
+      addMessage(message);
+
+      if (currentMessages.length === 0) {
+        // STEP 3: Remove chat and show building
+
+        document.removeEventListener("click", handleClick);
+        changeToBuilding();
+      }
+    }
+  }
+};
+
+const startChat = () => {
+  // display first message without waiting for click
+  addMessage(messages[0]);
+  messages.shift();
+
+  currentMessages = messages;
+  document.addEventListener("click", handleClick);
 };
 
 // STEP 1: Start chat
-startChat(messages1, updateYear);
+startChat();

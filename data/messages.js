@@ -1,6 +1,6 @@
-export const messages1 = [
+export const messages = [
   {
-    text: "Bobe, postavíš mi dům?",
+    text: "Roberte, postavíš mi dům?",
     sender: "Vanna Venturiová",
   },
   {
@@ -15,34 +15,32 @@ export const messages1 = [
     text: "Jdu na to!",
     sender: "Robert Venturi",
   },
-  // { text: "Méně je více.", sender: "Mies van der Rohe" },
-  // {
-  //   text: "Méně je nuda. Bude to tak a tak ...",
-  //   sender: "Robert Venturi",
-  // },
-  // {
-  //   text: "Nikdy nemaluj dům na zeleno. To je barva přírody.",
-  //   sender: "Marcel Breuer",
-  // },
-  // // {
-  // //   text: "Jedna věc, kterou nikdy nedělám, je používat zelenou barvu na dům. To je barva přírody. Nikdy to nedělej.",
-  // //   sender: "Marcel Breuer",
-  // // },
-  // {
-  //   text: "A natřený bude na zeleno!",
-  //   sender: "Robert Venturi",
-  // },
+  {
+    text: "...",
+    sender: "Robert Venturi",
+  },
+  { text: "Méně je více.", sender: "Mies van der Rohe" },
+  {
+    text: "Méně je nuda. Bude to tak a tak ...",
+    sender: "Robert Venturi",
+  },
+  {
+    text: "Já vžycky říkal, nemaluj dům na zeleno. To je barva přírody.",
+    sender: "Marcel Breuer",
+  },
+  {
+    text: "A natřený bude na zeleno!",
+    sender: "Robert Venturi",
+  },
   {
     text: "...",
     sender: "Robert Venturi",
   },
 ];
 
-// I wasn't trying to be postmodern.
+export const lastMessage = {
+  text: "Hotovo!",
+  sender: "Robert Venturi",
+};
 
-export const messages2 = [
-  {
-    text: "Hotovo!",
-    sender: "Robert Venturi",
-  },
-];
+// I wasn't trying to be postmodern.

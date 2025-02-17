@@ -166,6 +166,19 @@ footer {
   border-left: 12px solid white;
 }
 
+.message--black .message-text {
+  background-color: black;
+  color: white;
+}
+
+.message--black.message--left .message-text::after {
+  border-right: 12px solid black;
+}
+
+.message--black.message--right .message-text::after {
+  border-left: 12px solid black;
+}
+
 /* Loading message */
 .line {
   display: inline-block;

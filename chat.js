@@ -1,6 +1,3 @@
-let currentMessages = [];
-let currentCallback = null;
-
 const chat = document.querySelector(".chat");
 
 const createLoadingMessage = (element) => {
@@ -13,8 +10,7 @@ const createLoadingMessage = (element) => {
   }
 };
 
-const addMessage = (message) => {
-  chat.style.display = "flex";
+export const addMessage = (message) => {
   const messageEl = document.createElement("div");
   const senderEl = document.createElement("div");
   const textEl = document.createElement("div");
@@ -30,7 +26,7 @@ const addMessage = (message) => {
 
   textEl.classList.add("message-text");
 
-  messageEl.classList.add("message", "message--received");
+  messageEl.classList.add("message");
 
   if (message.sender === "Robert Venturi") {
     messageEl.classList.add("message--right");
@@ -38,48 +34,24 @@ const addMessage = (message) => {
     messageEl.classList.add("message--left");
   }
 
+  if (
+    message.sender === "Marcel Breuer" ||
+    message.sender === "Mies van der Rohe"
+  ) {
+    messageEl.classList.add("message--black");
+  }
+
   messageEl.appendChild(senderEl);
   messageEl.appendChild(textEl);
   chat.appendChild(messageEl);
 };
 
-// export const clearMessages = () => {
-//   while (chat.firstChild) {
-//     chat.removeChild(chat.firstChild);
-//   }
-// };
-
-export const clearLastMessage = () => {
-  chat.removeChild(chat.lastChild);
-};
-
-const handleClick = (messages, callback) => {
-  if (messages.length > 0) {
-    const message = messages.shift();
-    if (message && messages.length > 0) {
-      addMessage(message);
-    } else {
-      addMessage(message);
-      document.removeEventListener("click", handleClickWrapper);
-      callback();
-    }
-  } else {
-    document.removeEventListener("click", handleClickWrapper);
-    callback();
+export const clearMessages = () => {
+  while (chat.firstChild) {
+    chat.removeChild(chat.firstChild);
   }
 };
 
-const handleClickWrapper = () => {
-  handleClick(currentMessages, currentCallback);
-};
-
-export const startChat = (messages, callback) => {
-  // display first message without waiting for click
-  addMessage(messages[0]);
-  messages.shift();
-
-  currentMessages = messages;
-  currentCallback = callback;
-
-  document.addEventListener("click", handleClickWrapper);
+export const clearLastMessage = () => {
+  chat.removeChild(chat.lastChild);
 };
