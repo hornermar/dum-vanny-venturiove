@@ -1,7 +1,17 @@
 <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
- <g id="Layer_04">
-  <title>Layer 04</title>
-  <rect stroke="#000" id="svg_14" height="289.41985" width="30.15892" y="69.31388" x="258.2046" stroke-width="0" fill="#ffaa56"/>
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <g stroke="null">
+   <g stroke="null" id="svg_25">
+    <title stroke="null">Layer 1</title>
+    <g stroke="null" id="svg_26">
+     <g stroke="null" id="svg_27">
+      <title stroke="null">Layer 04</title>
+      <rect stroke="#000" fill="#ffaa56" stroke-width="0" x="280.00001" y="72.54483" width="22.99044" height="276.87502" id="svg_28"/>
+     </g>
+    </g>
+   </g>
+  </g>
  </g>
 
 </svg>

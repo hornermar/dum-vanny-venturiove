@@ -1,12 +1,12 @@
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" >
- <g id="Layer_03">
-  <title>Layer 03</title>
-  <g id="svg_17">
-   <path stroke="#000" id="svg_1" d="m359.12308,400.91123l0,-90.65542l93.45924,90.65542l-93.45924,0z" stroke-width="0" fill="#ffffff"/>
-   <path stroke="#000" id="svg_10" d="m213.28899,358.42405l27.56082,-48.13146l119.58083,0l-0.15062,48.13146l-146.99103,0z" stroke-width="0" fill="#ffffff"/>
-   <rect stroke="#000" id="svg_12" height="42.41269" width="26.92693" y="357.38162" x="213.8525" stroke-width="0" fill="#ffffff"/>
-   <rect stroke="#000" id="svg_13" height="207.84694" width="119" y="103.67192" x="240.71332" stroke-width="0" fill="#ffffff"/>
-  </g>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <path stroke="#000" id="svg_11" d="m302.72391,401.81244l0,-91.13174l125.02498,91.13174l-125.02498,0z" stroke-width="0" fill="#ffffff"/>
+  <path transform="rotate(-90 229.552 330.285)" stroke="#000" id="svg_6" d="m200.23642,341.25874l-0.19044,-21.96405l59.01198,21.97993l-58.82154,-0.01588z" stroke-width="0" fill="#ffffff"/>
+  <rect stroke="#000" id="svg_9" height="41.26474" width="21.88805" y="359.15013" x="218.58921" stroke-width="0" fill="#ffffff"/>
+  <path stroke="#000" id="svg_10" d="m223.24146,349.23285l24.22163,-84.61129l55.57486,5.68176l-0.08168,78.92953l-79.71481,0z" stroke-width="0" fill="#ffffff"/>
+  <path stroke="#000" id="svg_8" d="m247.87535,103.55681l55.41327,0l0,207.84694l-55.41327,0l0,-207.84694z" opacity="undefined" stroke-width="0" fill="#ffffff"/>
+  <path stroke="#000" id="svg_21" d="m398.06184,400.55218l0.04159,-20.04231l48.99877,9.97548l-0.00198,9.95261l-49.03839,0.11422z" opacity="NaN" stroke-width="0" fill="#ffffff"/>
  </g>
 
 </svg>

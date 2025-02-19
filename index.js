@@ -5,6 +5,7 @@ import { messages, lastMessage } from "./data/messages.js";
 
 let currentYear = 1960;
 let currentMessages = [];
+let clickInterval;
 
 const chat = document.querySelector(".chat");
 const slider = document.querySelector(".slider");
@@ -66,10 +67,18 @@ const handleClick = () => {
         // STEP 3: Remove chat and show building
 
         document.removeEventListener("click", handleClick);
+        clearInterval(clickInterval);
         changeToBuilding();
       }
     }
   }
+};
+
+const resetClickInterval = () => {
+  if (clickInterval) {
+    clearInterval(clickInterval);
+  }
+  clickInterval = setInterval(handleClick, 3000);
 };
 
 const startChat = () => {
@@ -78,7 +87,12 @@ const startChat = () => {
   messages.shift();
 
   currentMessages = messages;
-  document.addEventListener("click", handleClick);
+  document.addEventListener("click", () => {
+    handleClick();
+    resetClickInterval();
+  });
+
+  resetClickInterval();
 };
 
 // STEP 1: Start chat

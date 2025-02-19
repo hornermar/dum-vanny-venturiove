@@ -1,22 +1,15 @@
 <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
  <g id="Layer_1">
   <title>Layer 1</title>
-  <g id="svg_24">
-   <g id="svg_9">
-    <title>Layer 19</title>
-    <path fill="#b4eced" stroke-width="3" opacity="undefined" d="m436.00001,333.01004l151.83486,0l0,31.80718l-151.83486,0l0,-31.80718z" id="svg_11" stroke="#5e8f80"/>
-   </g>
-  </g>
-  <g id="svg_26">
-   <g id="svg_19">
-    <title>Layer 18</title>
-    <path fill="#b4eced" stroke-width="3" opacity="undefined" d="m29,325.00001l67.43167,0l0,67.50046l-67.43167,0l0,-67.50046z" id="svg_21" stroke="#5e8f80"/>
-   </g>
-  </g>
-  <g id="svg_30">
-   <g id="svg_22">
-    <title>Layer 17</title>
-    <path fill="#b4eced" stroke-width="3" opacity="undefined" d="m165,331.99999l32.64929,0l0,32.68259l-32.64929,0l0,-32.68259z" id="svg_23" stroke="#5e8f80"/>
+  <g stroke="null">
+   <g stroke="null" id="svg_161">
+    <title stroke="null">Layer 1</title>
+    <g stroke="null">
+     <g stroke="null" id="svg_162">
+      <title stroke="null">Layer 12</title>
+      <rect stroke="#000" id="svg_163" height="9.93331" width="215.1724" y="296.47367" x="192.4138" stroke-width="0" fill="#ffffff"/>
+     </g>
+    </g>
    </g>
   </g>
  </g>
