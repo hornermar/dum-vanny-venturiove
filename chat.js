@@ -11,6 +11,10 @@ const createLoadingMessage = (element) => {
 };
 
 export const addMessage = (message) => {
+  if (message.text !== "...") {
+    clearLastMessage();
+  }
+
   const messageEl = document.createElement("div");
   const senderEl = document.createElement("div");
   const textEl = document.createElement("div");
@@ -53,5 +57,5 @@ export const clearMessages = () => {
 };
 
 export const clearLastMessage = () => {
-  chat.removeChild(chat.lastChild);
+  chat.lastChild && chat.removeChild(chat.lastChild);
 };

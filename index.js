@@ -24,6 +24,17 @@ const displaySlider = () => {
   });
 };
 
+const addLoadingMessages = (messages) => {
+  const messagesWithLoading = [];
+  messages.forEach((message) => {
+    if (message.text !== "...") {
+      messagesWithLoading.push({ text: "...", sender: message.sender });
+    }
+    messagesWithLoading.push(message);
+  });
+  return messagesWithLoading;
+};
+
 // STEP 2: Update year
 const updateYear = () => {
   const interval = setInterval(() => {
@@ -53,11 +64,13 @@ const changeToBuilding = () => {
 const handleClick = () => {
   if (currentMessages.length > 0) {
     const message = currentMessages.shift();
+    const nextMessage = currentMessages[0];
+
     if (message) {
-      if (message.text === "...") {
+      if (message.text === "..." && nextMessage?.text === "...") {
         // STEP 2: Update year
         updateYear();
-      } else if (message.text === "Méně je více.") {
+      } else if (nextMessage?.sender === "Mies van der Rohe") {
         clearMessages();
       }
 
@@ -78,15 +91,15 @@ const resetClickInterval = () => {
   if (clickInterval) {
     clearInterval(clickInterval);
   }
-  clickInterval = setInterval(handleClick, 3000);
+  clickInterval = setInterval(handleClick, 5000);
 };
 
 const startChat = () => {
-  // display first message without waiting for click
-  addMessage(messages[0]);
-  messages.shift();
+  currentMessages = addLoadingMessages(messages);
 
-  currentMessages = messages;
+  // display first message without waiting for click
+  addMessage(currentMessages.shift());
+
   document.addEventListener("click", () => {
     handleClick();
     resetClickInterval();

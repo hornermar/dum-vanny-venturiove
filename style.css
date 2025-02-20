@@ -15,6 +15,11 @@ body {
   color: white;
 }
 
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -31,7 +36,7 @@ footer {
 
 .building-layer {
   width: 90%;
-  max-width: 900px;
+  max-width: 850px;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -55,7 +60,8 @@ footer {
   margin: 20px 0;
   height: 100%;
   width: 100%;
-  max-width: 400px;
+  /* width: 90%; */
+  /* max-width: 950px; */
   position: relative;
 }
 
@@ -80,8 +86,9 @@ footer {
 
 /* Progress bar */
 .year {
+  font-weight: 600;
   color: #5e8f80;
-  font-size: 30px;
+  font-size: 34px;
   position: fixed;
   bottom: 15px;
   left: 50%;
@@ -97,7 +104,7 @@ footer {
 .message {
   font-size: 14px;
   margin-bottom: 10px;
-  max-width: 80%;
+  max-width: 85%;
 }
 
 .message--left {
@@ -112,6 +119,7 @@ footer {
 .message-sender {
   font-size: 12px;
   margin: 0 10px;
+  font-weight: 600;
 }
 
 .message--left .message-sender {
@@ -130,7 +138,7 @@ footer {
   border-radius: 6px;
   display: inline-block;
   position: relative;
-  max-width: 300px;
+  max-width: 400px;
   word-wrap: break-word;
   white-space: pre-wrap;
 }
@@ -187,6 +195,10 @@ footer {
   border-radius: 6px;
   background-color: #7f7f7f;
   margin: 0 2px 5px;
+}
+
+.message--black .line {
+  background-color: white;
 }
 
 .message-text--loading .line:nth-last-child(1) {
