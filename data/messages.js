@@ -15,10 +15,6 @@ export const messages = [
     text: "Jdu na to!",
     sender: "Robert Venturi",
   },
-  {
-    text: "...",
-    sender: "Robert Venturi",
-  },
   { text: "Méně je více.", sender: "Mies van der Rohe" },
   {
     text: "Méně je nuda.",
@@ -32,23 +28,23 @@ export const messages = [
   //   text: "Ve svém celu bude přijímat obecné prvky domu a v jednotlivostech prvky nahodilé.",
   //   sender: "Robert Venturi",
   // },
+
   {
-    text: "Já vžycky říkal, nemaluj dům na zeleno. To je barva přírody.",
+    text: "Hotovo!",
+    sender: "Robert Venturi",
+  },
+  {
+    text: "Já říkával, nikdy nemaluj dům na zeleno. To je barva přírody.",
     sender: "Marcel Breuer",
   },
   {
-    text: "A natřený bude na zeleno!",
+    text: "Mně se to naopak zdá jako dobrý nápad. Alespoň zapadne do okolní zeleně",
     sender: "Robert Venturi",
   },
-  {
-    text: "...",
-    sender: "Robert Venturi",
-  },
+  // {
+  //   text: "A to ještě ani netušíš, že si právě postavil první postmoderní dům vůbec!",
+  //   sender: "Teoretik",
+  // },
 ];
-
-export const lastMessage = {
-  text: "Hotovo!",
-  sender: "Robert Venturi",
-};
 
 // I wasn't trying to be postmodern.

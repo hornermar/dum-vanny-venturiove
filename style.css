@@ -15,6 +15,20 @@ body {
   color: white;
 }
 
+/* Header */
+.year {
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 2px 10px;
+  background-color: #7f7f7f;
+  border-bottom-left-radius: 6px;
+  z-index: 1000;
+}
+
 main {
   max-width: 900px;
   margin: 0 auto;
@@ -23,9 +37,11 @@ main {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 50px 32px 32px;
   height: 100%;
   z-index: 1000;
+  /* max-height: calc(100vh - 64px); */
+  overflow-y: auto;
 }
 
 .slider,
@@ -82,17 +98,6 @@ footer {
   background: #89c6b4;
   cursor: pointer;
   transition: #89c6b4 0.15s ease-in-out;
-}
-
-/* Progress bar */
-.year {
-  font-weight: 600;
-  color: #5e8f80;
-  font-size: 34px;
-  position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /*  Chat */
@@ -174,17 +179,17 @@ footer {
   border-left: 12px solid white;
 }
 
-.message--black .message-text {
-  background-color: black;
+.message--dark .message-text {
+  background-color: #7f7f7f;
   color: white;
 }
 
-.message--black.message--left .message-text::after {
-  border-right: 12px solid black;
+.message--dark.message--left .message-text::after {
+  border-right: 12px solid #7f7f7f;
 }
 
-.message--black.message--right .message-text::after {
-  border-left: 12px solid black;
+.message--dark.message--right .message-text::after {
+  border-left: 12px solid #7f7f7f;
 }
 
 /* Loading message */
@@ -197,7 +202,7 @@ footer {
   margin: 0 2px 5px;
 }
 
-.message--black .line {
+.message--dark .line {
   background-color: white;
 }
 

@@ -1,17 +1,23 @@
-import { initBuilding, updateElement } from "./building.js";
+import {
+  initBuilding,
+  updateElement,
+  changeBuildingColor,
+} from "./building.js";
 import { clearLastMessage, addMessage, clearMessages } from "./chat.js";
 import { layers } from "./data/layers.js";
-import { messages, lastMessage } from "./data/messages.js";
+import { messages } from "./data/messages.js";
 
-let currentYear = 1960;
+let currentYear = 1959;
 let currentMessages = [];
-let clickInterval;
+let isChatActive = true;
+let isWriting = false;
 
 const chat = document.querySelector(".chat");
 const slider = document.querySelector(".slider");
 const element = document.querySelector(".element");
 const footer = document.querySelector("footer");
 
+const progressBar = document.getElementById("progress-bar");
 const year = document.querySelector(".year");
 
 // Utility functions
@@ -24,88 +30,82 @@ const displaySlider = () => {
   });
 };
 
-const addLoadingMessages = (messages) => {
-  const messagesWithLoading = [];
-  messages.forEach((message) => {
-    if (message.text !== "...") {
-      messagesWithLoading.push({ text: "...", sender: message.sender });
-    }
-    messagesWithLoading.push(message);
-  });
-  return messagesWithLoading;
+const addYear = () => {
+  currentYear++;
+  year.textContent = currentYear;
 };
 
-// STEP 2: Update year
 const updateYear = () => {
   const interval = setInterval(() => {
-    if (currentYear <= 1964) {
-      year.textContent = currentYear;
-      currentYear++;
-    } else {
+    if (currentYear < 1963) {
+      addYear();
+    } else if (currentYear === 1963 && !isChatActive) {
+      // STEP 3: Remove chat and show building
+
+      clearMessages();
+      addYear();
+      initBuilding();
+    } else if (currentYear === 1964) {
+      addYear();
+      addMessageWithLoading(currentMessages.shift());
+      isChatActive = true;
+    } else if (currentYear === 1965) {
+      addYear();
       clearInterval(interval);
     }
   }, 3000);
 };
 
-// STEP 3: Remove chat and show building
-const changeToBuilding = () => {
-  const checkInterval = setInterval(() => {
-    if (currentYear === 1965) {
-      clearLastMessage();
-      addMessage(lastMessage);
-      clearInterval(checkInterval);
-      chat.style.display = "none";
-      year.style.display = "none";
-      initBuilding(displaySlider);
-    }
-  }, 2000);
+const addMessageWithLoading = (message) => {
+  isWriting = true;
+  addMessage({ sender: message.sender, text: "..." });
+
+  setTimeout(() => {
+    isWriting = false;
+    clearLastMessage();
+    addMessage(message);
+  }, message.text.length * 50);
 };
 
 const handleClick = () => {
+  if (isWriting || !isChatActive) {
+    return;
+  }
+
   if (currentMessages.length > 0) {
     const message = currentMessages.shift();
-    const nextMessage = currentMessages[0];
 
     if (message) {
-      if (message.text === "..." && nextMessage?.text === "...") {
+      if (message.text === "Jdu na to!") {
         // STEP 2: Update year
         updateYear();
-      } else if (nextMessage?.sender === "Mies van der Rohe") {
-        clearMessages();
       }
 
-      addMessage(message);
+      addMessageWithLoading(message);
 
-      if (currentMessages.length === 0) {
-        // STEP 3: Remove chat and show building
-
-        document.removeEventListener("click", handleClick);
-        clearInterval(clickInterval);
-        changeToBuilding();
+      if (message.text === "Hotovo!") {
+        isChatActive = false;
       }
     }
+  } else {
+    addYear();
+    changeBuildingColor();
+    clearMessages();
+    displaySlider();
+    isChatActive = false;
+    document.removeEventListener("click", handleClick);
   }
-};
-
-const resetClickInterval = () => {
-  if (clickInterval) {
-    clearInterval(clickInterval);
-  }
-  clickInterval = setInterval(handleClick, 5000);
 };
 
 const startChat = () => {
-  currentMessages = addLoadingMessages(messages);
+  currentMessages = messages;
 
   // display first message without waiting for click
-  addMessage(currentMessages.shift());
+  addMessageWithLoading(currentMessages.shift());
 
   document.addEventListener("click", () => {
     handleClick();
-    resetClickInterval();
   });
-
-  resetClickInterval();
 };
 
 // STEP 1: Start chat

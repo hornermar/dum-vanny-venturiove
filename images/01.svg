@@ -1,8 +1,12 @@
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" >
- <g id="Layer_01">
-  <title>Layer 01</title>
-  <rect stroke="#000" fill="#89c6b4" x="-0.13044" y="310" width="600" height="90" id="svg_17" stroke-width="0"/>
-  <path stroke="#000" id="svg_18" d="m-0.12043,311.40249l124.23914,-66.6087l351.08699,0l124.67388,66.6087l-600.00001,0z" stroke-width="0" fill="#89c6b4"/>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <rect stroke="#000" id="svg_17" height="207.84694" width="119" y="103.8241" x="240.2719" stroke-width="0" fill="#ffffff"/>
+  <g id="svg_21">
+   <title fill="#c4bec3">Layer 01</title>
+   <rect stroke="#000" fill="#c4bec3" x="-0.005" y="309.6031" width="600" height="90" id="svg_23" stroke-width="0"/>
+   <path stroke="#000" id="svg_22" d="m0.00501,311.00559l124.23914,-66.6087l351.08699,0l124.67388,66.6087l-600.00001,0z" stroke-width="0" fill="#c4bec3"/>
+  </g>
  </g>
 
 </svg>

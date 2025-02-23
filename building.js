@@ -34,7 +34,7 @@ sliderInput.addEventListener("input", () => {
   updateElement(value);
 });
 
-export const initBuilding = (callback) => {
+export const initBuilding = () => {
   let completedTimeouts = 0;
   const totalTimeouts = svgImages.length;
 
@@ -48,12 +48,17 @@ export const initBuilding = (callback) => {
     setTimeout(() => {
       updateSvg(imgId);
       completedTimeouts++;
-
-      if (completedTimeouts === totalTimeouts) {
-        setTimeout(() => {
-          callback();
-        }, 1000);
-      }
     }, index * 200);
+  });
+};
+
+export const changeBuildingColor = () => {
+  const elementsToChange = ["01", "02", "07", "08", "09", "10", "11"];
+
+  svgImages.forEach((img) => {
+    const id = img.id.replace("layer", "");
+    if (elementsToChange.includes(id)) {
+      img.src = `images/${id}b.svg`;
+    }
   });
 };

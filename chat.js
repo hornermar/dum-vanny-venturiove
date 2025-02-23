@@ -11,24 +11,12 @@ const createLoadingMessage = (element) => {
 };
 
 export const addMessage = (message) => {
-  if (message.text !== "...") {
-    clearLastMessage();
-  }
-
   const messageEl = document.createElement("div");
   const senderEl = document.createElement("div");
   const textEl = document.createElement("div");
 
   senderEl.textContent = message.sender;
   senderEl.classList.add("message-sender");
-
-  if (message.text === "...") {
-    createLoadingMessage(textEl);
-  } else {
-    textEl.textContent = message.text;
-  }
-
-  textEl.classList.add("message-text");
 
   messageEl.classList.add("message");
 
@@ -42,12 +30,23 @@ export const addMessage = (message) => {
     message.sender === "Marcel Breuer" ||
     message.sender === "Mies van der Rohe"
   ) {
-    messageEl.classList.add("message--black");
+    messageEl.classList.add("message--dark");
   }
+
+  if (message.text === "...") {
+    createLoadingMessage(textEl);
+  } else {
+    textEl.textContent = message.text;
+  }
+
+  textEl.classList.add("message-text");
 
   messageEl.appendChild(senderEl);
   messageEl.appendChild(textEl);
   chat.appendChild(messageEl);
+
+  // Scroll to the bottom of the page
+  window.scrollTo(0, document.body.scrollHeight);
 };
 
 export const clearMessages = () => {
