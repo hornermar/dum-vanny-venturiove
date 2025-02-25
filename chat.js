@@ -10,6 +10,11 @@ const createLoadingMessage = (element) => {
   }
 };
 
+const isElementInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return rect.bottom <= window.innerHeight;
+};
+
 export const addMessage = (message) => {
   const messageEl = document.createElement("div");
   const senderEl = document.createElement("div");
@@ -46,7 +51,9 @@ export const addMessage = (message) => {
   chat.appendChild(messageEl);
 
   // Scroll to the bottom of the page
-  messageEl.scrollIntoView({ behavior: "smooth" });
+  if (!isElementInViewport(messageEl)) {
+    messageEl.scrollIntoView({ behavior: "smooth" });
+  }
 };
 
 export const clearMessages = () => {
