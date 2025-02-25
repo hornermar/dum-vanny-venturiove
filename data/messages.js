@@ -24,27 +24,26 @@ export const messages = [
     text: "Dům bude složitý a jednoduchý zároveň. Otevřený i uzavřený. Velký i malý. Z jednoho pohledu budou některé prvky dobré a z jiného špatné.",
     sender: "Robert Venturi",
   },
-  // {
-  //   text: "Ve svém celu bude přijímat obecné prvky domu a v jednotlivostech prvky nahodilé.",
-  //   sender: "Robert Venturi",
-  // },
-
-  {
-    text: "Hotovo!",
-    sender: "Robert Venturi",
-  },
   {
     text: "Já říkával, nikdy nemaluj dům na zeleno. To je barva přírody.",
     sender: "Marcel Breuer",
   },
   {
-    text: "Mně se to naopak zdá jako dobrý nápad. Alespoň zapadne do okolní zeleně",
+    text: "Dobře, natřu ho na šedohnědou. Ale líbí se mi myšlenka, že by dům splynul s okolní zelení.",
     sender: "Robert Venturi",
   },
   // {
-  //   text: "A to ještě ani netušíš, že si právě postavil první postmoderní dům vůbec!",
-  //   sender: "Teoretik",
+  //   text: "Ve svém celku bude přijímat obecné prvky domu a v jednotlivostech prvky nahodilé.",
+  //   sender: "Robert Venturi",
   // },
+  {
+    text: "Hotovo!",
+    sender: "Robert Venturi",
+  },
+  {
+    text: "A to ještě ani netušíš, že si právě dokončil první postmoderní dům vůbec!",
+    sender: "Teoretik",
+  },
 ];
 
 // I wasn't trying to be postmodern.

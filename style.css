@@ -11,21 +11,22 @@ body {
   font-family: "Roboto Mono", serif;
   height: 100vh;
   margin: 0;
-  background-color: rgb(220, 220, 220);
+  background-color: #ece7ea;
   color: white;
 }
 
 /* Header */
 .year {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   font-size: 18px;
   font-weight: 500;
   padding: 2px 10px;
-  background-color: #7f7f7f;
-  border-bottom-left-radius: 6px;
+  background-color: #89c6b4;
+  border-radius: 6px;
   z-index: 1000;
 }
 
@@ -68,7 +69,26 @@ footer {
   width: 100%;
   text-align: center;
   font-size: 12px;
-  color: #7f7f7f;
+  color: #8b878a;
+}
+
+.button-container {
+  display: none;
+  flex-direction: column;
+  margin-top: 100px;
+  align-self: center;
+  color: #8b878a;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  border-radius: 50px;
+  background-color: #89c6b4;
+  border: 0;
+  width: 25px;
+  padding: 25px 25px;
+  /* transition: all 1s ease-in-out; */
 }
 
 /* Slider */
@@ -76,8 +96,6 @@ footer {
   margin: 20px 0;
   height: 100%;
   width: 100%;
-  /* width: 90%; */
-  /* max-width: 950px; */
   position: relative;
 }
 
@@ -86,7 +104,7 @@ footer {
   width: 100%;
   height: 10px;
   border-radius: 50px;
-  background: #7f7f7f;
+  background: #8b878a;
   outline: none;
 }
 
@@ -128,18 +146,18 @@ footer {
 }
 
 .message--left .message-sender {
-  color: black;
+  color: #8b878a;
 }
 
 .message--right .message-sender {
-  color: #5e8f80;
+  color: #89c6b4;
 }
 
 .message-text {
   background-color: white;
   padding: 10px 15px;
   margin-top: 5px;
-  color: #7f7f7f;
+  color: #8b878a;
   border-radius: 6px;
   display: inline-block;
   position: relative;
@@ -180,16 +198,16 @@ footer {
 }
 
 .message--dark .message-text {
-  background-color: #7f7f7f;
+  background-color: #a09b9f;
   color: white;
 }
 
 .message--dark.message--left .message-text::after {
-  border-right: 12px solid #7f7f7f;
+  border-right: 12px solid #a09b9f;
 }
 
 .message--dark.message--right .message-text::after {
-  border-left: 12px solid #7f7f7f;
+  border-left: 12px solid #a09b9f;
 }
 
 /* Loading message */

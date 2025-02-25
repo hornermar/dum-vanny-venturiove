@@ -1,10 +1,12 @@
 <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
  <g id="Layer_1">
   <title>Layer 1</title>
-  <rect stroke="#000" id="svg_17" height="207.84694" width="119" y="103.8241" x="240.2719" stroke-width="0" fill="#ffffff"/>
-  <rect stroke="#000" id="svg_16" height="35.44999" width="30.15892" y="69.46606" x="272.66707" stroke-width="0" fill="#a09b9f"/>
-  <rect stroke="#000" id="svg_15" height="296.2073" width="119.92271" y="104.32662" x="240.03865" stroke-width="0" fill="#a09b9f"/>
-  <rect stroke="#000" stroke-width="0" id="svg_14" height="73.26226" width="68.57007" y="239.74369" x="287.83944" fill="#b4eced"/>
+  <g id="svg_1"/>
+  <g id="svg_22"/>
+  <rect stroke="#000" id="svg_21" height="207.84694" width="119" y="102.82412" x="240.27191" stroke-width="0" fill="#ffffff"/>
+  <path fill="#8b878a" stroke="#000" stroke-width="0" opacity="undefined" d="m272.66707,68.46607l30.15892,0l0,35.44999l-30.15892,0l0,-35.44999z" id="svg_20"/>
+  <path fill="#8b878a" stroke="#000" stroke-width="0" opacity="undefined" d="m240.03866,103.32664l119.9227,0l0,296.20731l-119.9227,0l0,-296.20731z" id="svg_19"/>
+  <rect stroke="#000" stroke-width="0" id="svg_18" height="73.26226" width="68.57007" y="238.74371" x="287.83945" fill="#b4eced"/>
  </g>
 
 </svg>

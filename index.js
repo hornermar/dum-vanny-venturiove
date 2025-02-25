@@ -17,8 +17,10 @@ const slider = document.querySelector(".slider");
 const element = document.querySelector(".element");
 const footer = document.querySelector("footer");
 
-const progressBar = document.getElementById("progress-bar");
 const year = document.querySelector(".year");
+
+const colorButtonContainer = document.querySelector(".button-container");
+const colorButton = document.querySelector("button");
 
 // Utility functions
 const displaySlider = () => {
@@ -35,27 +37,6 @@ const addYear = () => {
   year.textContent = currentYear;
 };
 
-const updateYear = () => {
-  const interval = setInterval(() => {
-    if (currentYear < 1963) {
-      addYear();
-    } else if (currentYear === 1963 && !isChatActive) {
-      // STEP 3: Remove chat and show building
-
-      clearMessages();
-      addYear();
-      initBuilding();
-    } else if (currentYear === 1964) {
-      addYear();
-      addMessageWithLoading(currentMessages.shift());
-      isChatActive = true;
-    } else if (currentYear === 1965) {
-      addYear();
-      clearInterval(interval);
-    }
-  }, 3000);
-};
-
 const addMessageWithLoading = (message) => {
   isWriting = true;
   addMessage({ sender: message.sender, text: "..." });
@@ -65,6 +46,38 @@ const addMessageWithLoading = (message) => {
     clearLastMessage();
     addMessage(message);
   }, message.text.length * 50);
+};
+
+const addColorButton = () => {
+  colorButtonContainer.style.display = "flex";
+  colorButton.addEventListener("click", () => {
+    changeBuildingColor();
+    displaySlider();
+    colorButtonContainer.style.display = "none";
+  });
+};
+
+// Main timeline function
+const updateYear = () => {
+  const interval = setInterval(() => {
+    if (currentYear < 1963) {
+      addYear();
+    } else if (currentYear === 1963 && !isChatActive) {
+      // STEP 3: Remove chat and show building
+      chat.style.display = "none";
+      addYear();
+      initBuilding();
+    } else if (currentYear === 1964) {
+      // STEP 4: Add color button
+      addYear();
+    } else if (currentYear === 1965) {
+      addYear();
+      addColorButton();
+    } else if (currentYear === 1966) {
+      addYear();
+      clearInterval(interval);
+    }
+  }, 3000);
 };
 
 const handleClick = () => {
@@ -82,16 +95,8 @@ const handleClick = () => {
       }
 
       addMessageWithLoading(message);
-
-      if (message.text === "Hotovo!") {
-        isChatActive = false;
-      }
     }
   } else {
-    addYear();
-    changeBuildingColor();
-    clearMessages();
-    displaySlider();
     isChatActive = false;
     document.removeEventListener("click", handleClick);
   }
@@ -110,3 +115,5 @@ const startChat = () => {
 
 // STEP 1: Start chat
 startChat();
+// initBuilding();
+// addColorButton();

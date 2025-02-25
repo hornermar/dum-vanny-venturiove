@@ -46,7 +46,7 @@ export const addMessage = (message) => {
   chat.appendChild(messageEl);
 
   // Scroll to the bottom of the page
-  window.scrollTo(0, document.body.scrollHeight);
+  window.scrollTo(0, document.body.clientHeight);
 };
 
 export const clearMessages = () => {
