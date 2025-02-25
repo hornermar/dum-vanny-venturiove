@@ -11,7 +11,7 @@ body {
   font-family: "Roboto Mono", serif;
   height: 100vh;
   margin: 0;
-  background-color: #ece7ea;
+  background-color: #e3e0e2;
   color: white;
 }
 
@@ -22,7 +22,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   padding: 2px 10px;
   background-color: #89c6b4;
@@ -38,10 +38,9 @@ main {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 50px 32px 32px;
+  padding: 60px 32px 32px;
   height: 100%;
-  z-index: 1000;
-  /* max-height: calc(100vh - 64px); */
+  /* z-index: 1000; */
   overflow-y: auto;
 }
 

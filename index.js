@@ -37,7 +37,13 @@ const addYear = () => {
   year.textContent = currentYear;
 };
 
+const calculateDelay = (text) => {
+  const baseDelay = text.length * 50;
+  return Math.min(Math.max(baseDelay, 700), 3500);
+};
+
 const addMessageWithLoading = (message) => {
+  const delay = calculateDelay(message.text);
   isWriting = true;
   addMessage({ sender: message.sender, text: "..." });
 
@@ -45,7 +51,7 @@ const addMessageWithLoading = (message) => {
     isWriting = false;
     clearLastMessage();
     addMessage(message);
-  }, message.text.length * 50);
+  }, delay);
 };
 
 const addColorButton = () => {
@@ -77,7 +83,7 @@ const updateYear = () => {
       addYear();
       clearInterval(interval);
     }
-  }, 3000);
+  }, 2750);
 };
 
 const handleClick = () => {

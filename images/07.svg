@@ -3,10 +3,17 @@
   <title>Layer 1</title>
   <g id="svg_1"/>
   <g id="svg_22"/>
-  <rect stroke="#000" id="svg_21" height="207.84694" width="119" y="102.82412" x="240.27191" stroke-width="0" fill="#ffffff"/>
-  <path fill="#8b878a" stroke="#000" stroke-width="0" opacity="undefined" d="m272.66707,68.46607l30.15892,0l0,35.44999l-30.15892,0l0,-35.44999z" id="svg_20"/>
-  <path fill="#8b878a" stroke="#000" stroke-width="0" opacity="undefined" d="m240.03866,103.32664l119.9227,0l0,296.20731l-119.9227,0l0,-296.20731z" id="svg_19"/>
-  <rect stroke="#000" stroke-width="0" id="svg_18" height="73.26226" width="68.57007" y="238.74371" x="287.83945" fill="#b4eced"/>
+  <g>
+   <g id="svg_98">
+    <title>Layer 1</title>
+    <g id="svg_104"/>
+    <g id="svg_103"/>
+    <rect fill="#ffffff" stroke-width="0" x="239.45888" y="103.78363" width="119" height="207.84694" id="svg_102" stroke="#000"/>
+    <path id="svg_101" d="m271.85404,69.42558l30.15892,0l0,35.44999l-30.15892,0l0,-35.44999z" opacity="undefined" stroke-width="0" stroke="#000" fill="#8b878a"/>
+    <path id="svg_100" d="m239.22563,104.28615l119.9227,0l0,296.20731l-119.9227,0l0,-296.20731z" opacity="undefined" stroke-width="0" stroke="#000" fill="#8b878a"/>
+    <rect fill="#c9e7e8" x="287.02642" y="239.70322" width="68.57007" height="73.26226" id="svg_99" stroke-width="0" stroke="#000"/>
+   </g>
+  </g>
  </g>
 
 </svg>
