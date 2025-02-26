@@ -24,6 +24,7 @@ const colorButton = document.querySelector("button");
 
 // Utility functions
 const displaySlider = () => {
+  scrollTo(0, 0);
   const elements = [slider, element, footer];
 
   elements.forEach((element) => {
@@ -75,12 +76,9 @@ const updateYear = () => {
       initBuilding();
     } else if (currentYear === 1964) {
       // STEP 4: Add color button
-      addYear();
-    } else if (currentYear === 1965) {
-      addYear();
+      // addYear();
+
       addColorButton();
-    } else if (currentYear === 1966) {
-      addYear();
       clearInterval(interval);
     }
   }, 2750);
@@ -122,4 +120,5 @@ const startChat = () => {
 // STEP 1: Start chat
 startChat();
 // initBuilding();
+// displaySlider();
 // addColorButton();

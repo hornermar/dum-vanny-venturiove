@@ -11,7 +11,7 @@ body {
   font-family: "Roboto Mono", serif;
   height: 100vh;
   margin: 0;
-  background-color: #e3e0e2;
+  background-color: #e7e5e7;
   color: white;
 }
 
@@ -41,6 +41,8 @@ main {
   padding: 60px 32px 32px;
   height: 100%;
   /* z-index: 1000; */
+  max-width: 664px;
+  margin: 0 auto;
   overflow-y: auto;
 }
 
@@ -52,7 +54,7 @@ footer {
 
 .building-layer {
   width: 90%;
-  max-width: 850px;
+  max-width: 600px;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -74,7 +76,7 @@ footer {
 .button-container {
   display: none;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 50px;
   align-self: center;
   color: #8b878a;
   gap: 10px;
@@ -92,10 +94,12 @@ button {
 
 /* Slider */
 .slider {
-  margin: 20px 0;
+  margin: 40px 0 20px;
   height: 100%;
   width: 100%;
   position: relative;
+  max-width: 300px;
+  align-self: center;
 }
 
 .slider--input {
@@ -160,7 +164,7 @@ button {
   border-radius: 6px;
   display: inline-block;
   position: relative;
-  max-width: 400px;
+  max-width: 250px;
   word-wrap: break-word;
   white-space: pre-wrap;
 }

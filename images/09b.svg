@@ -1,27 +1,41 @@
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="400.00000000000006" xmlns="http://www.w3.org/2000/svg">
  <g id="Layer_1">
   <title>Layer 1</title>
   <g>
-   <g id="svg_140">
+   <g id="svg_134">
     <title>Layer 1</title>
-    <g id="svg_147">
-     <g id="svg_148">
-      <title>Layer 19</title>
-      <path stroke="#5e8f80" id="svg_149" d="m427.58256,335.26852l151.83486,0l0,31.80718l-151.83486,0l0,-31.80718z" opacity="undefined" stroke-width="3" fill="#c9e7e8"/>
+    <g>
+     <g id="svg_135">
+      <title>Layer 1</title>
+      <g id="svg_142">
+       <g id="svg_143">
+        <title>Layer 19</title>
+        <path fill="#c9e7e8" stroke-width="3" opacity="undefined" d="m426.2492,335.59287l151.83486,0l0,31.80718l-151.83486,0l0,-31.80718z" id="svg_144" stroke="#5e8f80"/>
+       </g>
+      </g>
+      <g id="svg_139">
+       <g id="svg_140">
+        <title>Layer 18</title>
+        <path fill="#c9e7e8" stroke-width="3" opacity="undefined" d="m19.24919,327.58284l67.43167,0l0,67.50046l-67.43167,0l0,-67.50046z" id="svg_141" stroke="#5e8f80"/>
+       </g>
+      </g>
+      <g id="svg_136">
+       <g id="svg_137">
+        <title>Layer 17</title>
+        <path fill="#c9e7e8" stroke-width="3" opacity="undefined" d="m155.24919,334.58282l32.64929,0l0,32.68259l-32.64929,0l0,-32.68259z" id="svg_138" stroke="#5e8f80"/>
+       </g>
+      </g>
      </g>
     </g>
-    <g id="svg_144">
-     <g id="svg_145">
-      <title>Layer 18</title>
-      <path stroke="#5e8f80" id="svg_146" d="m20.58255,327.25849l67.43167,0l0,67.50046l-67.43167,0l0,-67.50046z" opacity="undefined" stroke-width="3" fill="#c9e7e8"/>
-     </g>
-    </g>
-    <g id="svg_141">
-     <g id="svg_142">
-      <title>Layer 17</title>
-      <path stroke="#5e8f80" id="svg_143" d="m156.58255,334.25847l32.64929,0l0,32.68259l-32.64929,0l0,-32.68259z" opacity="undefined" stroke-width="3" fill="#c9e7e8"/>
-     </g>
-    </g>
+   </g>
+  </g>
+  <g id="svg_1"/>
+  <g id="svg_22"/>
+  <g id="svg_12"/>
+  <g id="svg_11"/>
+  <g>
+   <g id="svg_25">
+    <title>Layer 1</title>
    </g>
   </g>
  </g>

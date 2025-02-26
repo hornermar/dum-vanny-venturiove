@@ -25,11 +25,11 @@ export const messages = [
     sender: "Robert Venturi",
   },
   {
-    text: "Já říkával, nikdy nemaluj dům na zeleno. To je barva přírody.",
+    text: "Nikdy ale nemaluj dům na zeleno. To je barva přírody.",
     sender: "Marcel Breuer",
   },
   {
-    text: "Dobře, natřu ho na šedohnědou. Ale líbí se mi myšlenka, že by dům splynul s okolní zelení.",
+    text: "Tak bude šedohnědý. Ale líbí se mi myšlenka, že by dům splynul s okolní zelení.",
     sender: "Robert Venturi",
   },
   // {
@@ -41,8 +41,8 @@ export const messages = [
     sender: "Robert Venturi",
   },
   {
-    text: "A to ještě ani netušíš, že si právě dokončil první postmoderní dům vůbec!",
-    sender: "Teoretik",
+    text: "A to ještě ani netušíš, že si právě dokončil  první postmoderní dům vůbec!",
+    sender: "Kritik architektury",
   },
 ];
 

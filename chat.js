@@ -12,7 +12,7 @@ const createLoadingMessage = (element) => {
 
 const isElementInViewport = (el) => {
   const rect = el.getBoundingClientRect();
-  return rect.bottom <= window.innerHeight;
+  return rect.bottom <= window.innerHeight - 32;
 };
 
 export const addMessage = (message) => {

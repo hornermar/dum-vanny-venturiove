@@ -1,42 +1,34 @@
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="400.00000000000006" xmlns="http://www.w3.org/2000/svg">
  <g id="Layer_1">
   <title>Layer 1</title>
-  <rect stroke="#000" fill="#89c6b4" stroke-width="0" x="278.43471" y="296.17753" width="42.64865" height="9.50739" id="svg_3"/>
-  <g id="svg_1">
-   <g id="svg_8">
+  <g id="svg_1"/>
+  <g id="svg_22"/>
+  <g id="svg_12"/>
+  <g id="svg_11"/>
+  <g>
+   <g id="svg_25">
     <title>Layer 1</title>
-    <g id="svg_2" stroke="null">
-     <g stroke="null" id="svg_9">
-      <title stroke="null">Layer 1</title>
-      <g id="svg_13" stroke="null">
-       <g stroke="null" id="svg_10">
-        <title stroke="null">Layer 12</title>
-        <rect stroke="#000" id="svg_11" height="9.93331" width="215.1724" y="295.90281" x="193.71815" stroke-width="0" fill="#ffffff"/>
-       </g>
-      </g>
-     </g>
-    </g>
    </g>
   </g>
-  <g id="svg_62">
-   <g id="svg_52">
+  <g id="svg_87">
+   <g id="svg_88">
     <title stroke="#8b8589">Layer 1</title>
-    <g id="svg_59">
-     <g id="svg_60">
+    <g id="svg_95">
+     <g id="svg_96">
       <title stroke="#8b8589">Layer 19</title>
-      <path stroke="#8b8589" id="svg_61" d="m427.58253,334.99842l151.83486,0l0,31.80718l-151.83486,0l0,-31.80718z" opacity="undefined" stroke-width="3" fill="#c9e7e8"/>
+      <path fill="#c9e7e8" stroke-width="3" opacity="undefined" d="m426.24923,334.80259l151.83486,0l0,31.80718l-151.83486,0l0,-31.80718z" id="svg_97" stroke="#8b8589"/>
      </g>
     </g>
-    <g id="svg_56">
-     <g id="svg_57">
+    <g id="svg_92">
+     <g id="svg_93">
       <title stroke="#8b8589">Layer 18</title>
-      <path stroke="#8b8589" id="svg_58" d="m20.58252,326.98839l67.43167,0l0,67.50046l-67.43167,0l0,-67.50046z" opacity="undefined" stroke-width="3" fill="#c9e7e8"/>
+      <path fill="#c9e7e8" stroke-width="3" opacity="undefined" d="m19.24922,326.79256l67.43167,0l0,67.50046l-67.43167,0l0,-67.50046z" id="svg_94" stroke="#8b8589"/>
      </g>
     </g>
-    <g id="svg_53">
-     <g id="svg_54">
+    <g id="svg_89">
+     <g id="svg_90">
       <title stroke="#8b8589">Layer 17</title>
-      <path stroke="#8b8589" id="svg_55" d="m156.58252,333.98837l32.64929,0l0,32.68259l-32.64929,0l0,-32.68259z" opacity="undefined" stroke-width="3" fill="#c9e7e8"/>
+      <path fill="#c9e7e8" stroke-width="3" opacity="undefined" d="m155.24922,333.79254l32.64929,0l0,32.68259l-32.64929,0l0,-32.68259z" id="svg_91" stroke="#8b8589"/>
      </g>
     </g>
    </g>
