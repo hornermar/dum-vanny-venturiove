@@ -20,19 +20,9 @@ const footer = document.querySelector("footer");
 const year = document.querySelector(".year");
 
 const colorButtonContainer = document.querySelector(".button-container");
-const colorButton = document.querySelector("button");
+const playButton = document.querySelector(".arrow-right-container");
 
 // Utility functions
-const displaySlider = () => {
-  scrollTo(0, 0);
-  const elements = [slider, element, footer];
-
-  elements.forEach((element) => {
-    element.style.display = "block";
-    updateElement(layers.length);
-  });
-};
-
 const addYear = () => {
   currentYear++;
   year.textContent = currentYear;
@@ -55,10 +45,28 @@ const addMessageWithLoading = (message) => {
   }, delay);
 };
 
+const displaySlider = () => {
+  const elements = [slider, element, footer];
+
+  elements.forEach((element) => {
+    element.style.display = "block";
+    updateElement(layers.length);
+  });
+
+  playButton.style.display = "flex";
+  playButton.addEventListener("click", () => {
+    addYear();
+    updateYear();
+  });
+};
+
 const addColorButton = () => {
+  scrollTo(0, 0);
   colorButtonContainer.style.display = "flex";
-  colorButton.addEventListener("click", () => {
+  colorButtonContainer.addEventListener("click", () => {
     changeBuildingColor();
+
+    // STEP 5: Display slider
     displaySlider();
     colorButtonContainer.style.display = "none";
   });
@@ -66,22 +74,29 @@ const addColorButton = () => {
 
 // Main timeline function
 const updateYear = () => {
+  let timeout = currentYear < 1962 ? 5500 : 200;
+
   const interval = setInterval(() => {
     if (currentYear < 1963) {
       addYear();
-    } else if (currentYear === 1963 && !isChatActive) {
-      // STEP 3: Remove chat and show building
-      chat.style.display = "none";
-      addYear();
-      initBuilding();
+    } else if (currentYear === 1963) {
+      if (isChatActive) {
+        clearInterval(interval);
+      } else {
+        // STEP 3: Remove chat and show building
+        chat.style.display = "none";
+        addYear();
+        // STEP 4: Add color button
+        initBuilding(addColorButton);
+      }
     } else if (currentYear === 1964) {
-      // STEP 4: Add color button
-      // addYear();
-
-      addColorButton();
+      clearInterval(interval);
+    } else if (currentYear > 1964 && currentYear < 1977) {
+      addYear();
+    } else if (currentYear === 1977) {
       clearInterval(interval);
     }
-  }, 2750);
+  }, timeout);
 };
 
 const handleClick = () => {
@@ -102,6 +117,7 @@ const handleClick = () => {
     }
   } else {
     isChatActive = false;
+    updateYear();
     document.removeEventListener("click", handleClick);
   }
 };
@@ -121,4 +137,4 @@ const startChat = () => {
 startChat();
 // initBuilding();
 // displaySlider();
-// addColorButton();
+//  addColorButton();

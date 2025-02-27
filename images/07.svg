@@ -1,6 +1,24 @@
 <svg width="600" height="400.00000000000006" xmlns="http://www.w3.org/2000/svg">
  <g id="Layer_1">
   <title>Layer 1</title>
+  <g id="svg_19"/>
+  <g id="svg_18"/>
+  <g id="svg_17"/>
+  <g id="svg_16"/>
+  <g id="svg_14">
+   <g id="svg_15">
+    <title>Layer 1</title>
+   </g>
+  </g>
+  <g id="svg_13"/>
+  <g id="svg_10"/>
+  <g id="svg_9"/>
+  <g id="svg_8"/>
+  <rect fill="#ffffff" stroke-width="0" x="239.60523" y="102.82426" width="119" height="207.84694" id="svg_7" stroke="#000"/>
+  <path id="svg_5" d="m273.49005,69.13288l30.15892,0l0,35.44999l-30.15892,0l0,-35.44999z" opacity="undefined" stroke-width="0" stroke="#000" fill="#8b878a"/>
+  <path id="svg_4" d="m239.37198,103.32678l119.9227,0l0,296.20731l-119.9227,0l0,-296.20731z" opacity="undefined" stroke-width="0" stroke="#000" fill="#8b878a"/>
+  <rect fill="#c9e7e8" x="287.17277" y="238.74385" width="68.57007" height="73.26226" id="svg_3" stroke-width="0" stroke="#000"/>
+  <path id="svg_52" d="m239.00417,103.80939l119.9227,0l0,296.20731l-119.9227,0l0,-296.20731z" opacity="undefined" stroke-width="0" stroke="#000" fill="#8b878a"/>
   <g id="svg_1"/>
   <g id="svg_22"/>
   <g id="svg_12"/>
@@ -14,10 +32,11 @@
   <g id="svg_57"/>
   <g id="svg_56"/>
   <g id="svg_55"/>
-  <rect stroke="#000" id="svg_54" height="207.84694" width="119" y="103.30687" x="239.23742" stroke-width="0" fill="#ffffff"/>
-  <path fill="#8b878a" stroke="#000" stroke-width="0" opacity="undefined" d="m273.12224,68.94882l30.15892,0l0,35.44999l-30.15892,0l0,-35.44999z" id="svg_53"/>
-  <path fill="#8b878a" stroke="#000" stroke-width="0" opacity="undefined" d="m239.00417,103.80939l119.9227,0l0,296.20731l-119.9227,0l0,-296.20731z" id="svg_52"/>
-  <rect stroke="#000" stroke-width="0" id="svg_51" height="73.26226" width="68.57007" y="239.22646" x="286.80496" fill="#c9e7e8"/>
+  <rect fill="#c9e7e8" x="286.80496" y="239.22646" width="68.57007" height="73.26226" id="svg_51" stroke-width="0" stroke="#000"/>
+  <g id="svg_127"/>
+  <g id="svg_126"/>
+  <g id="svg_120"/>
+  <g id="svg_119"/>
  </g>
 
 </svg>

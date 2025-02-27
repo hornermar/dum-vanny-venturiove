@@ -34,7 +34,7 @@ sliderInput.addEventListener("input", () => {
   updateElement(value);
 });
 
-export const initBuilding = () => {
+export const initBuilding = (callback) => {
   let completedTimeouts = 0;
   const totalTimeouts = svgImages.length;
 
@@ -48,6 +48,12 @@ export const initBuilding = () => {
     setTimeout(() => {
       updateSvg(imgId);
       completedTimeouts++;
+
+      if (completedTimeouts === totalTimeouts) {
+        setTimeout(() => {
+          callback();
+        }, 1000);
+      }
     }, index * 200);
   });
 };

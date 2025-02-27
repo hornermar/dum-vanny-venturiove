@@ -8,13 +8,13 @@ export const layers = [
     id: 2,
     name: "Lunetové okno",
     description:
-      "Je dominantní tvarem a umístěním. Nachází se v zadní části domu. Dá se jím vejít na soukromou terasu.",
+      "Je dominantní svým tvarem a umístěním. Nachází se v zadní části domu a dá se jím vejít na soukromou terasu.",
   },
   {
     id: 3,
     name: "Krbový komín",
     description:
-      "Interiér je soustředěn kolem krbu a schodiště, které spolu soupeří. Tvarově se kroutí, aby uvolnily místo jeden druhému. Oba prvky, 'prázdný' krb a 'plné' schodiště si vzájemně vycházejí vstříc.",
+      'Interiér je soustředěn kolem krbu a schodiště, které spolu soupeří. Tvarově se kroutí, aby uvolnily místo jeden druhému. Oba prvky, "prázdný" krb a "plné" schodiště si vzájemně vycházejí vstříc.',
   },
   {
     id: 4,
@@ -32,12 +32,12 @@ export const layers = [
     id: 6,
     name: "Schodiště nikam",
     description:
-      "Schodiště stoupá v nešikovném úhlu. Na jednu stranu nevede nikam. Na druhou stranu slouží jako žebřík k mytí okna ve druhém patře.",
+      "Schodiště stoupá ve velmi ostrém úhlu. Na jednu stranu nevede nikam. Na druhou stranu slouží jako žebřík k mytí okna ve druhém patře.",
   },
   {
     id: 7,
-    name: "Falešný Komín",
-    description: "Pouze symbolizuje komín. Uprosstřed se nachází velké okno",
+    name: "Falešný komín",
+    description: "Pouze symbolizuje komín. Uprostřed se nachází velké okno",
   },
   {
     id: 8,
@@ -53,7 +53,8 @@ export const layers = [
   },
   {
     id: 11,
-    name: "Dřevěný oblouk a vodorovné prvky",
-    description: "Mají pouze dekorativní charakter, neslouží žádnému účelu.",
+    name: "Dřevěné prvky",
+    description:
+      "Oblouk a vododovné prvky podél oken mají pouze dekorativní charakter. Neslouží žádnému účelu.",
   },
 ];

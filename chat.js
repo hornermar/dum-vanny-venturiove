@@ -32,8 +32,8 @@ export const addMessage = (message) => {
   }
 
   if (
-    message.sender === "Marcel Breuer" ||
-    message.sender === "Mies van der Rohe"
+    message.sender !== "Vanna Venturiová" &&
+    message.sender !== "Robert Venturi"
   ) {
     messageEl.classList.add("message--dark");
   }
