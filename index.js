@@ -74,7 +74,7 @@ const addColorButton = () => {
 
 // Main timeline function
 const updateYear = () => {
-  let timeout = currentYear < 1962 ? 5500 : 200;
+  let timeout = currentYear <= 1966 ? 5500 : 200;
 
   const interval = setInterval(() => {
     if (currentYear < 1963) {
@@ -89,9 +89,11 @@ const updateYear = () => {
         // STEP 4: Add color button
         initBuilding(addColorButton);
       }
-    } else if (currentYear === 1964) {
+    } else if (currentYear >= 1964 && currentYear < 1966) {
+      addYear();
+    } else if (currentYear === 1966) {
       clearInterval(interval);
-    } else if (currentYear > 1964 && currentYear < 1977) {
+    } else if (currentYear > 1966 && currentYear < 1977) {
       addYear();
     } else if (currentYear === 1977) {
       clearInterval(interval);
