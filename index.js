@@ -5,14 +5,12 @@ import {
 } from "./building.js";
 import { clearLastMessage, addMessage, clearMessages } from "./chat.js";
 import { layers } from "./data/layers.js";
-import { messages } from "./data/messages.js";
+import { messages, messageJury } from "./data/messages.js";
 
 let currentYear = 1959;
 let currentMessages = [];
-let isChatActive = true;
 let isWriting = false;
 
-const chat = document.querySelector(".chat");
 const slider = document.querySelector(".slider");
 const element = document.querySelector(".element");
 const footer = document.querySelector("footer");
@@ -45,64 +43,88 @@ const addMessageWithLoading = (message) => {
   }, delay);
 };
 
+const hideSlider = () => {
+  slider.style.display = "none";
+  element.style.display = "none";
+};
+
 const displaySlider = () => {
-  const elements = [slider, element, footer];
+  const elements = [slider, element];
 
   elements.forEach((element) => {
     element.style.display = "block";
     updateElement(layers.length);
   });
 
+  displayPlayButton();
+};
+
+const hideColorButton = () => {
+  colorButtonContainer.style.display = "none";
+};
+
+const displayColorButton = () => {
+  scrollTo(0, 0);
+  footer.style.display = "block";
+  colorButtonContainer.style.display = "flex";
+  colorButtonContainer.addEventListener("click", () => {
+    changeBuildingColor();
+    hideColorButton();
+    updateYear();
+  });
+};
+
+const hidePlayButton = () => {
+  playButton.style.display = "none";
+};
+
+const displayPlayButton = () => {
   playButton.style.display = "flex";
   playButton.addEventListener("click", () => {
+    updateElement(layers.length);
+    hideSlider();
+    hidePlayButton();
     addYear();
     updateYear();
   });
 };
 
-const addColorButton = () => {
-  scrollTo(0, 0);
-  colorButtonContainer.style.display = "flex";
-  colorButtonContainer.addEventListener("click", () => {
-    changeBuildingColor();
-
-    // STEP 5: Display slider
-    displaySlider();
-    colorButtonContainer.style.display = "none";
-  });
+const displayJuryMessage = () => {
+  addMessage(messageJury[0]);
+  addMessage(messageJury[1]);
 };
 
 // Main timeline function
 const updateYear = () => {
-  let timeout = currentYear <= 1966 ? 5500 : 200;
+  let timeout = currentYear <= 1964 ? 5500 : currentYear < 1966 ? 800 : 200;
 
   const interval = setInterval(() => {
     if (currentYear < 1963) {
       addYear();
     } else if (currentYear === 1963) {
-      if (isChatActive) {
-        clearInterval(interval);
-      } else {
-        // STEP 3: Remove chat and show building
-        chat.style.display = "none";
-        addYear();
-        // STEP 4: Add color button
-        initBuilding(addColorButton);
-      }
-    } else if (currentYear >= 1964 && currentYear < 1966) {
-      addYear();
-    } else if (currentYear === 1966) {
+      // CLear interval and wait for click. Then start interval again
       clearInterval(interval);
-    } else if (currentYear > 1966 && currentYear < 1977) {
+    } else if (currentYear === 1964) {
       addYear();
-    } else if (currentYear === 1977) {
+
+      // Clear interval and wait for green button click
       clearInterval(interval);
+    } else if (currentYear === 1965) {
+      addYear();
+      // STEP 5: Display slider and wait for click play button
+      displaySlider();
+      clearInterval(interval);
+    } else if (currentYear > 1966 && currentYear < 1991) {
+      addYear();
+    } else if (currentYear === 1991) {
+      clearInterval(interval);
+      displayJuryMessage();
     }
   }, timeout);
 };
 
 const handleClick = () => {
-  if (isWriting || !isChatActive) {
+  if (isWriting) {
     return;
   }
 
@@ -118,9 +140,14 @@ const handleClick = () => {
       addMessageWithLoading(message);
     }
   } else {
-    isChatActive = false;
-    updateYear();
+    // STEP 4: Add building and add color button
+
     document.removeEventListener("click", handleClick);
+    clearMessages();
+    // chat.style.display = "none";
+    addYear();
+    initBuilding(displayColorButton);
+    updateYear();
   }
 };
 
@@ -130,13 +157,11 @@ const startChat = () => {
   // display first message without waiting for click
   addMessageWithLoading(currentMessages.shift());
 
-  document.addEventListener("click", () => {
-    handleClick();
-  });
+  document.addEventListener("click", handleClick);
 };
 
 // STEP 1: Start chat
 startChat();
 // initBuilding();
 // displaySlider();
-//  addColorButton();
+//  displayColorButton();

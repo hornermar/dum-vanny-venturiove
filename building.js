@@ -1,6 +1,5 @@
 import { layers } from "./data/layers.js";
 
-let userInteracted = false;
 const svgImages = document.querySelectorAll(".building-layer");
 const sliderInput = document.querySelector(".slider--input");
 const elementDescription = document.querySelector(".message-text");
@@ -37,10 +36,6 @@ sliderInput.addEventListener("input", () => {
 export const initBuilding = (callback) => {
   let completedTimeouts = 0;
   const totalTimeouts = svgImages.length;
-
-  document.addEventListener("click", () => {
-    userInteracted = true;
-  });
 
   svgImages.forEach((img, index) => {
     const imgId = parseInt(img.id.replace("layer", ""), 10);

@@ -8,7 +8,7 @@ export const messages = [
     sender: "Robert Venturi",
   },
   {
-    text: "Chtěla bych jednoduchý a nenáročný domov. S většinou místností v přízemí. A už nepoužívám auto, takže garáž nepotřebuju.",
+    text: "Chtěla bych jednoduchý a nenáročný domov. Už je mi 66, takže s většinou místností v přízemí. A už nepoužívám auto, takže garáž nepotřebuju.",
     sender: "Vanna Venturiová",
   },
   {
@@ -56,6 +56,17 @@ export const messages = [
   {
     text: "A to ještě ani netušíš, že jsi právě dokončil  první postmoderní dům vůbec!",
     sender: "Kritik architektury",
+  },
+];
+
+export const messageJury = [
+  {
+    text: "Robert Venturi byl letos vybrán jako laureát Pritzkerovy ceny, která je obecně považována za nejvyšší ocenění v oblasti architektury. Často označovaný za jednoho z nejoriginálnějších talentů současné architektury, proslavil se nejen svými realizovanými stavbami, ale také spisy, pedagogickou činností a teoriemi.",
+    sender: "Porota Pritzkerovy ceny",
+  },
+  {
+    text: "Jedním z jeho prvních projektů, který vzbudil pozornost, byl dům, který navrhl pro svou matku ve čtvrti Chestnut Hill ve Filadelfii, známý také jako dům Vanny Venturiové.",
+    sender: "Porota Pritzkerovy ceny",
   },
 ];
 
