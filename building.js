@@ -33,9 +33,8 @@ sliderInput.addEventListener("input", () => {
   updateElement(value);
 });
 
-export const initBuilding = (callback) => {
+export const initBuilding = () => {
   let completedTimeouts = 0;
-  const totalTimeouts = svgImages.length;
 
   svgImages.forEach((img, index) => {
     const imgId = parseInt(img.id.replace("layer", ""), 10);
@@ -43,13 +42,23 @@ export const initBuilding = (callback) => {
     setTimeout(() => {
       updateSvg(imgId);
       completedTimeouts++;
-
-      if (completedTimeouts === totalTimeouts) {
-        setTimeout(() => {
-          callback();
-        }, 1000);
-      }
     }, index * 200);
+  });
+};
+
+export const unInitBuilding = () => {
+  const currentValue = parseInt(sliderInput.value, 10);
+  let completedTimeouts = 0;
+
+  [...svgImages].reverse().forEach((img, index) => {
+    const imgId = parseInt(img.id.replace("layer", ""), 10);
+
+    if (imgId <= currentValue) {
+      setTimeout(() => {
+        img.style.bottom = "1200px";
+        completedTimeouts++;
+      }, index * 200);
+    }
   });
 };
 

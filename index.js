@@ -2,10 +2,11 @@ import {
   initBuilding,
   updateElement,
   changeBuildingColor,
+  unInitBuilding,
 } from "./building.js";
 import { clearLastMessage, addMessage, clearMessages } from "./chat.js";
 import { layers } from "./data/layers.js";
-import { messages, messageJury } from "./data/messages.js";
+import { messages, messagesJury } from "./data/messages.js";
 
 /* 
 
@@ -29,14 +30,16 @@ const MAX_DELAY = 3500;
 let currentYear = INITIAL_YEAR;
 let currentMessages = [];
 let isWriting = false;
+let visitedElements = [];
 
 // DOM elements
 const slider = document.querySelector(".slider");
+const sliderInput = document.querySelector(".slider--input");
 const element = document.querySelector(".element");
 const footer = document.querySelector("footer");
 const year = document.querySelector(".year");
 const colorButtonContainer = document.querySelector(".button-container");
-const playButton = document.querySelector(".arrow-right-container");
+const trophyButton = document.querySelector(".trophy");
 
 // Utility functions
 const incrementYear = () => {
@@ -68,23 +71,30 @@ const toggleDisplay = (elements, displayStyle) => {
 };
 
 // Functions to handle UI elements
-const hideSlider = () => toggleDisplay([slider, element], "none");
+const hideSlider = () => toggleDisplay([slider, element, footer], "none");
 
 const displaySlider = () => {
   toggleDisplay([slider, element], "block");
   updateElement(layers.length);
-  displayPlayButton();
 };
 
 const hideColorButton = () => {
   colorButtonContainer.style.display = "none";
 };
 
+const displayTrophyButton = () => {
+  trophyButton.style.display = "block";
+};
+
+const hideTrophyButton = () => {
+  trophyButton.style.display = "none";
+};
+
 // STEP 5: Change building color
 const handleColorButtonClick = () => {
   changeBuildingColor();
   hideColorButton();
-  updateTimeline();
+  displaySlider();
 };
 
 const displayColorButton = () => {
@@ -94,31 +104,56 @@ const displayColorButton = () => {
   colorButtonContainer.addEventListener("click", handleColorButtonClick);
 };
 
-const hidePlayButton = () => {
-  playButton.style.display = "none";
+const updateTrophy = () => {
+  const visitedCount = visitedElements.length;
+
+  switch (visitedCount) {
+    case 3: {
+      displayTrophyButton();
+      break;
+    }
+    case 6: {
+      trophyButton.src = `images/icons/trophy-02.svg`;
+      break;
+    }
+    case 9: {
+      trophyButton.src = `images/icons/trophy-03.svg`;
+      trophyButton.addEventListener("click", handleTrophyButtonClick);
+      break;
+    }
+  }
 };
 
-const displayPlayButton = () => {
-  playButton.style.display = "flex";
-  playButton.addEventListener("click", handlePlayButtonClick);
+const addVisitedElement = (element) => {
+  if (!visitedElements.includes(element)) {
+    visitedElements.push(element);
+    updateTrophy();
+  }
 };
 
-// STEP 7: Update timeline and display jury message
-const handlePlayButtonClick = () => {
-  updateElement(layers.length);
+sliderInput.addEventListener("input", () => {
+  const value = parseInt(sliderInput.value, 10);
+
+  addVisitedElement(value);
+});
+
+const handleTrophyButtonClick = () => {
+  unInitBuilding();
   hideSlider();
-  hidePlayButton();
+  hideTrophyButton();
   incrementYear();
   updateTimeline();
 };
 
 const displayJuryMessage = () => {
-  messageJury.forEach(addMessage);
+  currentMessages = messagesJury;
+  console;
+  startChat();
 };
 
 // Main timeline function
 const updateTimeline = () => {
-  let timeout = currentYear <= 1964 ? 5200 : currentYear < 1966 ? 800 : 200;
+  let timeout = currentYear <= 1964 ? 200 : currentYear < 1966 ? 800 : 150;
 
   const interval = setInterval(() => {
     if (currentYear < 1963) {
@@ -129,11 +164,10 @@ const updateTimeline = () => {
     } else if (currentYear === 1964) {
       // Clear interval and wait for green button click
       incrementYear();
-      clearInterval(interval);
     } else if (currentYear === 1965) {
       // STEP 6: Display slider and wait for click play button
       incrementYear();
-      displaySlider();
+      displayColorButton();
       clearInterval(interval);
     } else if (currentYear > 1966 && currentYear < 1991) {
       incrementYear();
@@ -157,22 +191,26 @@ const handleClick = () => {
       addMessageWithLoading(message);
     }
   } else {
-    // STEP 4: Add building and add color button. Start timeline again.
     document.removeEventListener("click", handleClick);
     clearMessages();
-    incrementYear();
-    initBuilding(displayColorButton);
-    updateTimeline();
+
+    // STEP 4: Add building and add color button. Start timeline again.
+    if (currentYear < 1964) {
+      incrementYear();
+      initBuilding(() => {});
+      updateTimeline();
+    } else {
+      // TODO: sources
+    }
   }
 };
 
 const startChat = () => {
-  currentMessages = messages;
-
   // display first message without waiting for click
   addMessageWithLoading(currentMessages.shift());
   document.addEventListener("click", handleClick);
 };
 
 // STEP 1: Start chat
+currentMessages = messages;
 startChat();

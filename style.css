@@ -34,22 +34,22 @@ header .year {
   border-radius: 6px;
 }
 
-.arrow-right-container {
-  cursor: pointer;
+.book {
   position: fixed;
-  right: calc(50% - 100px);
-  top: 11px;
-  /* display: flex; */
-  justify-content: flex-end;
-  align-items: center;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-left: 14px solid #8b878a;
+.trophy {
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 main {
@@ -70,6 +70,8 @@ main {
 .slider,
 .element,
 .arrow-right-container,
+.trophy,
+.book,
 footer {
   display: none;
 }
