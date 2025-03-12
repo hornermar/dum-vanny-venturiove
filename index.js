@@ -40,6 +40,10 @@ const footer = document.querySelector("footer");
 const year = document.querySelector(".year");
 const colorButtonContainer = document.querySelector(".button-container");
 const trophyButton = document.querySelector(".trophy");
+const svgImages = document.querySelectorAll(".building-layer");
+const sources = document.querySelector(".sources-container");
+const container = document.querySelector(".container");
+const refreshButton = document.querySelector(".refresh");
 
 // Utility functions
 const incrementYear = () => {
@@ -70,24 +74,32 @@ const toggleDisplay = (elements, displayStyle) => {
   });
 };
 
+const hide = (element) => {
+  element.style.display = "none";
+};
+
+const display = (element, type) => {
+  element.style.display = type ? type : "block";
+};
+
 // Functions to handle UI elements
 const hideSlider = () => toggleDisplay([slider, element, footer], "none");
+
+const hideYear = () => {
+  hide(year);
+};
 
 const displaySlider = () => {
   toggleDisplay([slider, element], "block");
   updateElement(layers.length);
 };
 
-const hideColorButton = () => {
-  colorButtonContainer.style.display = "none";
-};
-
 const displayTrophyButton = () => {
-  trophyButton.style.display = "block";
+  display(trophyButton);
 };
 
 const hideTrophyButton = () => {
-  trophyButton.style.display = "none";
+  hide(trophyButton);
 };
 
 // STEP 5: Change building color
@@ -99,9 +111,28 @@ const handleColorButtonClick = () => {
 
 const displayColorButton = () => {
   scrollTo(0, 0);
-  footer.style.display = "block";
-  colorButtonContainer.style.display = "flex";
+  display(footer);
+
+  const rect = svgImages?.[0].getBoundingClientRect();
+  colorButtonContainer.style.top = `${rect.top - 120}px`;
+
+  display(colorButtonContainer, "flex");
   colorButtonContainer.addEventListener("click", handleColorButtonClick);
+};
+
+const hideColorButton = () => {
+  hide(colorButtonContainer);
+};
+
+const displaySources = () => {
+  display(sources);
+};
+
+const displayRefreshButton = () => {
+  display(refreshButton);
+  refreshButton.addEventListener("click", () => {
+    location.reload();
+  });
 };
 
 const updateTrophy = () => {
@@ -147,13 +178,12 @@ const handleTrophyButtonClick = () => {
 
 const displayJuryMessage = () => {
   currentMessages = messagesJury;
-  console;
   startChat();
 };
 
 // Main timeline function
 const updateTimeline = () => {
-  let timeout = currentYear <= 1964 ? 200 : currentYear < 1966 ? 800 : 150;
+  let timeout = currentYear <= 1964 ? 500 : currentYear < 1966 ? 800 : 150;
 
   const interval = setInterval(() => {
     if (currentYear < 1963) {
@@ -167,7 +197,6 @@ const updateTimeline = () => {
     } else if (currentYear === 1965) {
       // STEP 6: Display slider and wait for click play button
       incrementYear();
-      displayColorButton();
       clearInterval(interval);
     } else if (currentYear > 1966 && currentYear < 1991) {
       incrementYear();
@@ -197,10 +226,13 @@ const handleClick = () => {
     // STEP 4: Add building and add color button. Start timeline again.
     if (currentYear < 1964) {
       incrementYear();
-      initBuilding(() => {});
+      initBuilding(displayColorButton);
       updateTimeline();
     } else {
-      // TODO: sources
+      hideYear();
+      container.style.justifyContent = "flex-end";
+      displaySources();
+      displayRefreshButton();
     }
   }
 };

@@ -2,7 +2,8 @@ export const layers = [
   {
     id: 1,
     name: "Zadní stěna",
-    description: "",
+    description:
+      "Stejně jako stěna přední má úlohu kulysy. Odehrávají se za ní vnitřní spletitosti.",
   },
   {
     id: 2,
@@ -12,9 +13,9 @@ export const layers = [
   },
   {
     id: 3,
-    name: "Krbový komín",
+    name: "Krb",
     description:
-      'Interiér je soustředěn kolem krbu a schodiště, které spolu soupeří. Tvarově se kroutí, aby uvolnily místo jeden druhému. Oba prvky, "prázdný" krb a "plné" schodiště si vzájemně vycházejí vstříc.',
+      'Interiér je soustředěn kolem krbu a schodiště, které spolu soupeří. Tvarově se kroutí, aby uvolnily místo jeden druhému. Oba prvky, "prázdný" krb a "plné" schodiště si vzájemně vycházejí vstříc. Krb je příliš "velký" v porovnání s rozměry místnosti.',
   },
   {
     id: 4,
