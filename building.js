@@ -49,7 +49,7 @@ export const initBuilding = (callback) => {
           callback();
         }, 1000);
       }
-    }, index * 200);
+    }, index * 300);
   });
 };
 
@@ -63,7 +63,7 @@ export const unInitBuilding = () => {
     if (imgId <= currentValue) {
       setTimeout(() => {
         img.style.bottom = "1200px";
-      }, removalCount * 200);
+      }, removalCount * 310);
       removalCount++;
     }
   });

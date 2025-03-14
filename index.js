@@ -24,7 +24,7 @@ STEP 7: Update timeline and display jury message
 const INITIAL_YEAR = 1959;
 const BASE_DELAY_MULTIPLIER = 50;
 const MIN_DELAY = 700;
-const MAX_DELAY = 3500;
+const MAX_DELAY = 3000;
 
 // State variables
 let currentYear = INITIAL_YEAR;
@@ -106,7 +106,8 @@ const hideTrophyButton = () => {
 const handleColorButtonClick = () => {
   changeBuildingColor();
   hideColorButton();
-  displaySlider();
+
+  setTimeout(() => displaySlider(), 900);
 };
 
 const displayColorButton = () => {
@@ -114,7 +115,7 @@ const displayColorButton = () => {
   display(footer);
 
   const rect = svgImages?.[0].getBoundingClientRect();
-  colorButtonContainer.style.top = `${rect.top - 120}px`;
+  colorButtonContainer.style.top = `${rect.top - 150}px`;
 
   display(colorButtonContainer, "flex");
   colorButtonContainer.addEventListener("click", handleColorButtonClick);
@@ -183,7 +184,7 @@ const displayJuryMessage = () => {
 
 // Main timeline function
 const updateTimeline = () => {
-  let timeout = currentYear <= 1964 ? 500 : currentYear < 1966 ? 800 : 150;
+  let timeout = currentYear <= 1964 ? 5000 : currentYear < 1966 ? 800 : 150;
 
   const interval = setInterval(() => {
     if (currentYear < 1963) {

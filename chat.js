@@ -28,20 +28,13 @@ export const addMessage = (message) => {
   if (message.sender === "Robert Venturi") {
     messageEl.classList.add("message--right");
   } else {
-    messageEl.classList.add("message--left");
-  }
-
-  if (
-    message.sender !== "Vanna Venturiová" &&
-    message.sender !== "Robert Venturi"
-  ) {
-    messageEl.classList.add("message--dark");
+    messageEl.classList.add("message--left", "message--dark");
   }
 
   if (message.text === "...") {
     createLoadingMessage(textEl);
   } else {
-    textEl.textContent = message.text;
+    textEl.innerHTML = message.text;
   }
 
   textEl.classList.add("message-text");

@@ -50,7 +50,11 @@ export const messages = [
     sender: "Robert Venturi",
   },
   {
-    text: "Hotovo!",
+    text: "Pátý.",
+    sender: "Robert Venturi",
+  },
+  {
+    text: "Šestý. Hotovo!",
     sender: "Robert Venturi",
   },
   {
@@ -61,27 +65,35 @@ export const messages = [
 
 export const messagesJury = [
   {
-    text: "Robert Venturi byl letos vybrán jako laureát Pritzkerovy ceny, která je obecně považována za nejvyšší ocenění v oblasti architektury.",
-    sender: "Porota Pritzkerovy ceny",
-  },
-  // {
-  //   text: "Často označovaný za jednoho z nejoriginálnějších talentů současné architektury, proslavil se nejen svými realizovanými stavbami, ale také spisy, pedagogickou činností a teoriemi.",
-  //   sender: "Porota Pritzkerovy ceny",
-  // },
-  {
-    text: "Jeho z prvních spisů Složitosti a protiklady v architektuře, publikovaný v roce 1966, je obecně považován za dílo, které odklonilo hlavní proud architektury od modernismu.",
+    text: "V tomto roce získává Pritkerovu cenu, která je považovaná za nejvyšší ocenění v architektuře, Robert Venturi.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
-    text: "Nespokojil se pouze s teorií. Své myšlenky ilustroval v plném měřítku prostřednictvím svých průkopnických raných staveb. Jeho první domy, včetně domu pro jeho matku z roku 1961, daly jeho přesvědčení konkrétní podobu, čímž zmátly kritiky a rozzlobily mnoho jeho kolegů.",
+    text: "Na dnešní den nikdy nezapomenu.",
+    sender: "Robert Venturi",
+  },
+  {
+    text: "Váš spis <i>Složitosti a protiklady v architektuře</i> zásadně ovlivnil odklon od modernismu.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
-    text: "V následujících letech si cílevědomě budoval kariéru, která ho etablovala nejen jako teoretika s mimořádným vhledem, ale také jako mistra svého oboru.",
+    text: "Vaše rané stavby, včetně domu pro vaši matku, ukázaly vaše přesvědčení v praxi. Mnohé to zmátlo, některé i pobouřilo.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
-    text: "Páni!",
+    text: "Ano, kritici byli často zaskočení. Ale architektura by měla být odrazem života – složitá, vrstevnatá, plná kontrastů.",
+    sender: "Robert Venturi",
+  },
+  {
+    text: "Vaše práce vás etablovala jako mistra oboru. Gratulujeme k významnému přínosu architektuře.",
+    sender: "Porota Pritzkerovy ceny",
+  },
+  {
+    text: "Děkuji za toto ocenění.",
+    sender: "Robert Venturi",
+  },
+  {
+    text: "Zapomněl jsem si dnes černou kravatu... nikdy jsem ale nezapomněl na vstupní dveře u žádné budovy, kterou jsem navrhnul.",
     sender: "Robert Venturi",
   },
 ];
