@@ -59,7 +59,7 @@ export const messages = [
   },
   {
     text: "A to ještě ani netušíš, že jsi právě dokončil  první postmoderní dům vůbec!",
-    sender: "Kritik architektury",
+    sender: "Kritik*čka architektury",
   },
 ];
 
@@ -69,11 +69,11 @@ export const messagesJury = [
     sender: "Porota Pritzkerovy ceny",
   },
   {
-    text: "Na dnešní den nikdy nezapomenu.",
+    text: "No teda!",
     sender: "Robert Venturi",
   },
   {
-    text: "Váš spis <i>Složitosti a protiklady v architektuře</i> zásadně ovlivnil odklon od modernismu.",
+    text: "Váš spis <i>Složitosti a protiklady v architektuře</i>, který jste vydal v roce 1966, zásadně odklonil směřování architektury od modernismu.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
@@ -85,7 +85,7 @@ export const messagesJury = [
     sender: "Robert Venturi",
   },
   {
-    text: "Vaše práce vás etablovala jako mistra oboru. Gratulujeme k významnému přínosu architektuře.",
+    text: "Vaše práce vás etablovala jako mistra oboru. Gratulujeme k významnému přínosu v architektuře.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
@@ -93,7 +93,7 @@ export const messagesJury = [
     sender: "Robert Venturi",
   },
   {
-    text: "Zapomněl jsem si dnes černou kravatu... nikdy jsem ale nezapomněl na vstupní dveře u žádné budovy, kterou jsem navrhnul.",
+    text: "Zapomněl jsem si dnes černou kravatu... nikdy jsem ale nezapomněl na vstupní dveře u žádné z budov, které jsem navrhnl.",
     sender: "Robert Venturi",
   },
 ];

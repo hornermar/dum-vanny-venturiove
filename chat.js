@@ -29,6 +29,14 @@ export const addMessage = (message) => {
     messageEl.classList.add("message--right");
   } else {
     messageEl.classList.add("message--left", "message--dark");
+
+    if (message.sender === "Mies van der Rohe") {
+      senderEl.classList.add("message--mies");
+    } else if (message.sender === "Marcel Breuer") {
+      senderEl.classList.add("message--breuer");
+    } else if (message.sender === "Kritik*čka architektury") {
+      senderEl.classList.add("message--critic");
+    }
   }
 
   if (message.text === "...") {

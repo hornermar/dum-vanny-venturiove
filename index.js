@@ -222,6 +222,7 @@ const handleClick = () => {
     }
   } else {
     document.removeEventListener("click", handleClick);
+    document.removeEventListener("keydown", handleClick);
     clearMessages();
 
     // STEP 4: Add building and add color button. Start timeline again.
@@ -242,6 +243,7 @@ const startChat = () => {
   // display first message without waiting for click
   addMessageWithLoading(currentMessages.shift());
   document.addEventListener("click", handleClick);
+  document.addEventListener("keydown", handleClick);
 };
 
 // STEP 1: Start chat

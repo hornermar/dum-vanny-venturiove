@@ -161,6 +161,18 @@ button {
   color: #8b878a;
 }
 
+.message--critic.message-sender {
+  color: #5e8f80;
+}
+
+.message--mies.message-sender {
+  color: #da934b;
+}
+
+.message--breuer.message-sender {
+  color: #aeae20;
+}
+
 .message--right .message-sender {
   color: #89c6b4;
 }
