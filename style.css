@@ -24,8 +24,8 @@ header {
   text-align: center;
   width: 100%;
   max-width: 600px;
-  position: relative;
-  margin: 0 auto;
+  position: fixed;
+  top: 0;
 }
 
 /* Header */
@@ -38,15 +38,6 @@ header .year {
   border-radius: 6px;
 }
 
-.book {
-  position: fixed;
-  right: 12px;
-  top: 12px;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-}
-
 .trophy {
   position: absolute;
   right: 12px;
@@ -57,8 +48,8 @@ header .year {
 }
 
 main {
+  margin: 50px auto 0;
   max-width: 900px;
-  margin: 0 auto;
 }
 
 .container {

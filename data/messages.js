@@ -65,7 +65,7 @@ export const messages = [
 
 export const messagesJury = [
   {
-    text: "V tomto roce získává Pritkerovu cenu, která je považovaná za nejvyšší ocenění v architektuře, Robert Venturi.",
+    text: "V tomto roce získává Pritkerovu cenu za architekturu Robert Venturi.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
@@ -73,21 +73,21 @@ export const messagesJury = [
     sender: "Robert Venturi",
   },
   {
-    text: "Váš spis <i>Složitosti a protiklady v architektuře</i>, který jste vydal v roce 1966, zásadně odklonil směřování architektury od modernismu.",
+    text: "Váš spis <i>Složitosti a protiklady v architektuře</i> z roku 1966 zásadně odklonil směřování architektury od modernismu.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
-    text: "Vaše rané stavby, včetně domu pro vaši matku, ukázaly vaše přesvědčení v praxi. Mnohé to zmátlo, některé i pobouřilo.",
+    text: "Vaše rané stavby, včetně domu pro vaši matku, ukázaly vaše přesvědčení v praxi.",
     sender: "Porota Pritzkerovy ceny",
   },
-  {
-    text: "Ano, kritici byli často zaskočení. Ale architektura by měla být odrazem života – složitá, vrstevnatá, plná kontrastů.",
-    sender: "Robert Venturi",
-  },
-  {
-    text: "Vaše práce vás etablovala jako mistra oboru. Gratulujeme k významnému přínosu v architektuře.",
-    sender: "Porota Pritzkerovy ceny",
-  },
+  // {
+  //   text: "Ano, kritici byli často zaskočení. Ale architektura by měla být odrazem života – složitá, vrstevnatá, plná kontrastů.",
+  //   sender: "Robert Venturi",
+  // },
+  // {
+  //   text: "Vaše práce vás etablovala jako mistra oboru. Gratulujeme k významnému přínosu v architektuře.",
+  //   sender: "Porota Pritzkerovy ceny",
+  // },
   {
     text: "Děkuji za toto ocenění.",
     sender: "Robert Venturi",
