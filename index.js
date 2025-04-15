@@ -233,8 +233,11 @@ const handleClick = () => {
     } else {
       hideYear();
       container.style.justifyContent = "flex-end";
-      displaySources();
-      displayRefreshButton();
+
+      setTimeout(() => {
+        displaySources();
+        displayRefreshButton();
+      }, 2000);
     }
   }
 };

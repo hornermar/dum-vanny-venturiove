@@ -15,7 +15,7 @@ export const layers = [
     id: 3,
     name: "Krb",
     description:
-      'Interiér je soustředěn kolem krbu a schodiště soupeřící spolu o pozornost. Vzájemně si ustupují, aby uvolnily místo jeden druhému. Krb je příliš "velký" v porovnání s rozměry místnosti.',
+      "Interiér je soustředěn kolem krbu a schodiště, které spolu soupeřící o pozornost. Navzájemně si ale ustupují, aby uvolnily místo jeden druhému. Krb je příliš velký v porovnání s rozměry místnosti.",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ export const layers = [
     id: 7,
     name: "Falešný komín",
     description:
-      "Uprostřed se nachází velké okno. Skutečný komín je mnohem menší a nachází se za falešným komínem.",
+      "Uprostřed falešného komínu se nachází velké okno. Skutečný komín je mnohem menší a nachází se až za falešným komínem.",
   },
   {
     id: 8,

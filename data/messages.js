@@ -4,7 +4,7 @@ export const messages = [
     sender: "Vanna Venturiová",
   },
   {
-    text: "Dobře mami. A jak by měl vypadat?",
+    text: "Dobře, mami. A jak by měl vypadat?",
     sender: "Robert Venturi",
   },
   {
@@ -65,7 +65,7 @@ export const messages = [
 
 export const messagesJury = [
   {
-    text: "V tomto roce získává Pritkerovu cenu za architekturu Robert Venturi.",
+    text: "V tomto roce získává Pritzkerovu cenu za architekturu Robert Venturi.",
     sender: "Porota Pritzkerovy ceny",
   },
   {
@@ -77,7 +77,7 @@ export const messagesJury = [
     sender: "Porota Pritzkerovy ceny",
   },
   {
-    text: "Vaše rané stavby, včetně domu pro vaši matku, ukázaly vaše přesvědčení v praxi.",
+    text: "Vaše rané stavby, včetně domu pro vaši matku, ukázaly vaše teorie v praxi.",
     sender: "Porota Pritzkerovy ceny",
   },
   // {
