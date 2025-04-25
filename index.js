@@ -237,7 +237,7 @@ const handleClick = () => {
       setTimeout(() => {
         displaySources();
         displayRefreshButton();
-      }, 2000);
+      }, 1000);
     }
   }
 };
